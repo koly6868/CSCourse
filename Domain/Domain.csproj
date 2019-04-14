@@ -61,6 +61,8 @@
     <Compile Include="Infrastructure\ProductRepository.cs" />
     <Compile Include="Infrastructure\Query\GetAllCompanyQuery.cs" />
     <Compile Include="Infrastructure\Query\GetAllContractsQuery.cs" />
+    <Compile Include="Infrastructure\Query\GetProductsQuery.cs" />
+    <Compile Include="Infrastructure\Query\GetAllProductsQuery.cs" />
     <Compile Include="Infrastructure\Query\GetCompanyQuery.cs" />
     <Compile Include="Infrastructure\Query\GetContractQuery.cs" />
     <Compile Include="Infrastructure\Query\GetProductsByContract.cs" />

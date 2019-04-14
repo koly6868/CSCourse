@@ -220,6 +220,7 @@
             this.Controls.Add(this.tableLayoutPanel1);
             this.Name = "ProductForm";
             this.Text = "ProductForm";
+            this.Load += new System.EventHandler(this.ProductForm_Load);
             this.tableLayoutPanel1.ResumeLayout(false);
             this.CartPanel.ResumeLayout(false);
             this.CartTopPaanel.ResumeLayout(false);

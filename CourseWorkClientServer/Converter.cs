@@ -35,14 +35,15 @@ namespace CourseWorkClientServer
                     products[i].TypeOfProduct,
                     products[i].Color,
                     products[i].Weight.ToString(),
-                    $"{products[i].Lenght}x{products[i].Width}x{products[i].Height}"
+                    $"{products[i].Lenght}x{products[i].Width}x{products[i].Height}",
+                    "1"
                 });
                 items[i].Tag = products[i].ID;
             }
             return items;
         }
 
-        public static ListViewItem[] Convert(ListView.SelectedListViewItemCollection collection)
+        public static ListViewItem[] Convert(ListView.ListViewItemCollection collection)
         {
             ListViewItem[] items = new ListViewItem[collection.Count];
             collection.CopyTo(items, 0);

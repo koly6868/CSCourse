@@ -26,7 +26,11 @@ namespace Domain.Infrastructure
 
         public Product Get(int ID)
         {
-            throw new NotImplementedException();
+            IQuery query = new GetProductsQuery();
+            using (var connection = new SqlConnection(connectionString))
+            {
+                return connection.Query<Product>(query.Sql, new { ID }).First();
+            }
         }
 
         public IEnumerable<Product> GetByContractID(int ID)
@@ -40,7 +44,11 @@ namespace Domain.Infrastructure
 
         public IEnumerable<Product> GetAll()
         {
-            throw new NotImplementedException();
+            IQuery query = new GetAllProductsQuery();
+            using (var connection = new SqlConnection(connectionString))
+            {
+                return connection.Query<Product>(query.Sql);
+            }
         }
 
         public bool Save(Product el)

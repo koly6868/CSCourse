@@ -1,4 +1,5 @@
-﻿using Domain.Infrastructure;
+﻿using Domain.Common;
+using Domain.Infrastructure;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -17,6 +18,7 @@ namespace CourseWorkClientServer
         {
             InitializeComponent();
             productRepository = ProductRepository.GetInstance();
+            LoadProducts();
         }
 
         private void CartList_DoubleClick(object sender, EventArgs e)
@@ -26,7 +28,34 @@ namespace CourseWorkClientServer
 
         private void Products_DoubleClick(object sender, EventArgs e)
         {
-            CartList.Items.AddRange(Converter.Convert(Products.SelectedItems));
+            int id = (int)Products.SelectedItems[0].Tag;
+            Product product = productRepository.Get(id);
+            ListViewItem view = Converter.Convert(new[] { product }).First();
+            ListViewItem item = Converter.Convert(CartList.Items).FirstOrDefault(el => (int)el.Tag == id);
+            if (item == null)
+            {
+                CartList.Items.Add(view);
+            }
+            else
+            {
+                item.SubItems[item.SubItems.Count - 1].Text = 
+                    (int.Parse(item.SubItems[item.SubItems.Count - 1].Text) + 1).ToString();
+            }
+        }
+
+
+        private void ProductForm_Load(object sender, EventArgs e)
+        {
+
+        }
+
+        private void LoadProducts()
+        {
+            Products.Items.AddRange(
+                Converter.Convert(
+                    productRepository
+                    .GetAll()
+                    .ToArray()));
         }
 
         private IProductRepository productRepository;
