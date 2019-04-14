@@ -57,6 +57,11 @@ namespace Domain.Infrastructure
             throw new NotImplementedException();
         }
 
+        public bool Delite(int ID)
+        {
+            throw new NotImplementedException();
+        }
+
         public ContractRepository(string connectionString)
         {
             this.connectionString = connectionString ?? throw new ArgumentNullException(nameof(connectionString));

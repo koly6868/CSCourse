@@ -18,5 +18,10 @@ namespace Domain.Common
         {
             return other.ID == ID;
         }
+
+        public override string ToString()
+        {
+            return TypeOfTransport;
+        }
     }
 }

@@ -99,6 +99,11 @@ namespace Domain.Infrastructure
             return res;
         }
 
+        public bool Delite(int ID)
+        {
+            throw new NotImplementedException();
+        }
+
         private readonly string connectionStirng;
     }
 }

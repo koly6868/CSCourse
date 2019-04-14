@@ -12,5 +12,6 @@ namespace Domain.Infrastructure
         bool Update(T el);
         bool Save(T el);
         IEnumerable<T> GetAll();
+        bool Delite(int ID);
     }
 }

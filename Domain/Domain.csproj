@@ -56,11 +56,14 @@
     <Compile Include="Common\Roles.cs" />
     <Compile Include="Common\Transport.cs" />
     <Compile Include="Infrastructure\ContractRepository.cs" />
+    <Compile Include="Infrastructure\IProductRepository.cs" />
     <Compile Include="Infrastructure\IRepository.cs" />
+    <Compile Include="Infrastructure\ProductRepository.cs" />
     <Compile Include="Infrastructure\Query\GetAllCompanyQuery.cs" />
     <Compile Include="Infrastructure\Query\GetAllContractsQuery.cs" />
     <Compile Include="Infrastructure\Query\GetCompanyQuery.cs" />
     <Compile Include="Infrastructure\Query\GetContractQuery.cs" />
+    <Compile Include="Infrastructure\Query\GetProductsByContract.cs" />
     <Compile Include="Infrastructure\Query\GetRoleQuery.cs" />
     <Compile Include="Infrastructure\Query\IQuery.cs" />
     <Compile Include="Infrastructure\CompanyRepository.cs" />

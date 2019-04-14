@@ -45,6 +45,7 @@ namespace CourseWorkClientServer
                         SetError("unrecognized");
                         break;
                 }
+                Hide();
             }
             else
             {
