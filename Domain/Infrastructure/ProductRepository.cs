@@ -12,6 +12,18 @@ namespace Domain.Infrastructure
 {
     public class ProductRepository : IRepository<Product>, IProductRepository
     {
+        private ProductRepository() { }
+
+        public static void Configure(string connectionString)
+        {
+            repository.connectionString = connectionString;
+        }
+
+        public static ProductRepository GetInstance()
+        {
+            return repository;
+        }
+
         public Product Get(int ID)
         {
             throw new NotImplementedException();
@@ -46,11 +58,7 @@ namespace Domain.Infrastructure
             throw new NotImplementedException();
         }
 
-        public ProductRepository(string connectionString)
-        {
-            this.connectionString = connectionString ?? throw new ArgumentNullException(nameof(connectionString));
-        }
-
-        private readonly string connectionString;
+        private string connectionString;
+        private static ProductRepository repository = new ProductRepository();
     }
 }

@@ -13,10 +13,10 @@ namespace CourseWorkClientServer
 {
     public partial class ProductForm : Form
     {
-        public ProductForm(string connectionString)
+        public ProductForm()
         {
             InitializeComponent();
-            productRepository
+            productRepository = ProductRepository.GetInstance();
         }
 
         private void CartList_DoubleClick(object sender, EventArgs e)

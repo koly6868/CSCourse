@@ -15,12 +15,12 @@ namespace CourseWorkClientServer
     public partial class Orders : Form
     {
 
-        public Orders(Form form, string connectionString)
+        public Orders(Form form)
         {
             InitializeComponent();
             this.form = form;
-            contractsRepository = new ContractRepository(connectionString);
-            productRepository = new ProductRepository(connectionString);
+            contractsRepository = ContractRepository.GetInstance();
+            productRepository = ProductRepository.GetInstance();
             LoadContracts();
         }
 

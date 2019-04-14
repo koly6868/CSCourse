@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using Domain.Infrastructure;
 using Domain.Infrastructure.Security;
 using Domain.Common;
 using Microsoft.Extensions.Configuration;
@@ -29,6 +30,7 @@ namespace CourseWorkClientServer
             IResult<int> result = security.Authenticate(LoginBox.Text, PasswordBox.Text);
             if (result.IsOk)
             {
+                RepositoryConfigure(security.GetConnectionString());
                 switch ((Roles)result.value)
                 {
                     case Roles.Buyer:
@@ -38,7 +40,7 @@ namespace CourseWorkClientServer
                         //to Workers form
                         break;
                     case Roles.Accountant:
-                        Orders form = new Orders(this, security.GetConnectionString());
+                        Orders form = new Orders(this);
                         form.Show();
                         break;
                     default:
@@ -90,12 +92,19 @@ namespace CourseWorkClientServer
                     break;
             }
         }
-        private readonly IConfiguration configuration;
-        private readonly ISecurity security;
 
         private void LogIn_Load(object sender, EventArgs e)
         {
 
         }
+
+        private void RepositoryConfigure(string connectionString)
+        {
+            ProductRepository.Configure(connectionString);
+            ContractRepository.Configure(connectionString);
+        }
+
+        private readonly IConfiguration configuration;
+        private readonly ISecurity security;
     }
 }

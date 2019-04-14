@@ -11,6 +11,18 @@ namespace Domain.Infrastructure
 {
     public class ContractRepository : IRepository<Contract>
     {
+        private ContractRepository() { }
+
+        public static void Configure(string connectionString)
+        {
+            repository.connectionString = connectionString;
+        }
+
+        public static ContractRepository GetInstance()
+        {
+            return repository;
+        }
+
         public Contract Get(int ID)
         {
             throw new NotImplementedException();
@@ -62,11 +74,7 @@ namespace Domain.Infrastructure
             throw new NotImplementedException();
         }
 
-        public ContractRepository(string connectionString)
-        {
-            this.connectionString = connectionString ?? throw new ArgumentNullException(nameof(connectionString));
-        }
-
-        private readonly string connectionString;
+        private static ContractRepository repository = new ContractRepository();
+        private  string connectionString;
     }
 }
