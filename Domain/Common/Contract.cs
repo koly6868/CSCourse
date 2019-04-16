@@ -8,12 +8,12 @@ namespace Domain.Common
 {
     public class Contract : IEquatable<Contract>
     {
-        public int ID { get; }
+        public int ID { get; private set; }
         public IEnumerable<KeyValuePair<IProduct,int>> Products => products;
         public ITransport Transport { get; private set; }
         public ITransport AdditionalTransport { get; private set; }
         public int FullPrice { get; private set; }
-        public DateTimeOffset Date { get; }
+        public DateTime Date { get; private set; }
         //public DateTimeOffset DateOfImplementation { get; private set; }
 
         public bool ChangeTransport(ITransport transport)
@@ -73,6 +73,65 @@ namespace Domain.Common
             FullPrice = fullPrice;
             Date = date;
             products = new Dictionary<IProduct, int>();
+        }
+
+        public static ContractBuilder CreateBuilder()
+        {
+            return new ContractBuilder();
+        }
+
+        public class ContractBuilder
+        {
+            public ContractBuilder()
+            {
+                contract = new Contract(-1, 0, new DateTime());
+            }
+
+            public Contract Build()
+            {
+                return contract;
+            }
+
+            public ContractBuilder SetID(int ID)
+            {
+                contract.ID = ID;
+                return this;
+            }
+
+            public ContractBuilder SetDate(DateTime date)
+            {
+                contract.Date = date;
+                return this;
+            }
+
+            public ContractBuilder SetFullPrice(int price)
+            {
+                contract.FullPrice = price;
+                return this;
+            }
+
+            public ContractBuilder SetTransport(ITransport transport)
+            {
+                contract.Transport = transport;
+                return this;
+            }
+
+            public ContractBuilder SetAdditionalTransport(ITransport transport)
+            {
+                contract.AdditionalTransport = transport;
+                return this;
+            }
+
+            public ContractBuilder SetProducts(IEnumerable<KeyValuePair<IProduct, int>> products)
+            {
+                foreach(KeyValuePair<IProduct, int> item in products)
+                {
+                    contract.AddProduct(item.Key, item.Value);
+                }
+                return this;
+            }
+
+            private Contract contract;
         }
     }
 }

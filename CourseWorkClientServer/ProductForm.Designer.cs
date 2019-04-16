@@ -219,6 +219,7 @@
             this.ClientSize = new System.Drawing.Size(944, 551);
             this.Controls.Add(this.tableLayoutPanel1);
             this.Name = "ProductForm";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "ProductForm";
             this.Load += new System.EventHandler(this.ProductForm_Load);
             this.tableLayoutPanel1.ResumeLayout(false);

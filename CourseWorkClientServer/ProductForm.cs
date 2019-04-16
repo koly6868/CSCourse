@@ -23,7 +23,8 @@ namespace CourseWorkClientServer
 
         private void CartList_DoubleClick(object sender, EventArgs e)
         {
-
+            ProductCountForm form = new ProductCountForm(SetCountProductsInCart);
+            form.ShowDialog();
         }
 
         private void Products_DoubleClick(object sender, EventArgs e)
@@ -43,7 +44,6 @@ namespace CourseWorkClientServer
             }
         }
 
-
         private void ProductForm_Load(object sender, EventArgs e)
         {
 
@@ -56,6 +56,20 @@ namespace CourseWorkClientServer
                     productRepository
                     .GetAll()
                     .ToArray()));
+        }
+
+        private void SetCountProductsInCart(int count)
+        {
+            if (count == 0)
+            {
+                CartList.Items.Remove(CartList.SelectedItems[0]);
+            }
+            else
+            {
+                //index of count of product
+                int index = CartList.SelectedItems[0].SubItems.Count - 1;
+                CartList.SelectedItems[0].SubItems[index].Text = count.ToString();
+            }
         }
 
         private IProductRepository productRepository;

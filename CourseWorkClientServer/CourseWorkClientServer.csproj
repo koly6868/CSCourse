@@ -92,6 +92,12 @@
     <Compile Include="LogIn.Designer.cs">
       <DependentUpon>LogIn.cs</DependentUpon>
     </Compile>
+    <Compile Include="NewContractForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="NewContractForm.Designer.cs">
+      <DependentUpon>NewContractForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="NewOrderForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -103,6 +109,12 @@
     </Compile>
     <Compile Include="Orders.Designer.cs">
       <DependentUpon>Orders.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ProductCountForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ProductCountForm.Designer.cs">
+      <DependentUpon>ProductCountForm.cs</DependentUpon>
     </Compile>
     <Compile Include="ProductForm.cs">
       <SubType>Form</SubType>
@@ -125,11 +137,17 @@
     <EmbeddedResource Include="LogIn.resx">
       <DependentUpon>LogIn.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="NewContractForm.resx">
+      <DependentUpon>NewContractForm.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="NewOrderForm.resx">
       <DependentUpon>NewOrderForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Orders.resx">
       <DependentUpon>Orders.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ProductCountForm.resx">
+      <DependentUpon>ProductCountForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="ProductForm.resx">
       <DependentUpon>ProductForm.cs</DependentUpon>

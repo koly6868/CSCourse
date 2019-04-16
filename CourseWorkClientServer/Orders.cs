@@ -101,8 +101,8 @@ namespace CourseWorkClientServer
 
         private void NewOrderButton_Click(object sender, EventArgs e)
         {
-            ProductForm form = new ProductForm();
-            form.Show();
+            NewContractForm form = new NewContractForm();
+            form.ShowDialog();
         }
     }
 }

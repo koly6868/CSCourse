@@ -43,15 +43,15 @@
             this.Tab = new System.Windows.Forms.TabControl();
             this.OrdersTab = new System.Windows.Forms.TabPage();
             this.OrdersScreen = new System.Windows.Forms.TableLayoutPanel();
+            this.ProductPanel = new System.Windows.Forms.Panel();
+            this.TopProductPanel = new System.Windows.Forms.Panel();
+            this.ProductPanelLabel = new System.Windows.Forms.Label();
             this.Products = new System.Windows.Forms.ListView();
-            this.tabPage2 = new System.Windows.Forms.TabPage();
             this.ProductName = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.ProductColoer = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.ProductWeight = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.ProductSize = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.ProductPanel = new System.Windows.Forms.Panel();
-            this.TopProductPanel = new System.Windows.Forms.Panel();
-            this.ProductPanelLabel = new System.Windows.Forms.Label();
+            this.tabPage2 = new System.Windows.Forms.TabPage();
             this.OrderPanel.SuspendLayout();
             this.TopOrderPanel.SuspendLayout();
             this.Tab.SuspendLayout();
@@ -84,13 +84,13 @@
             this.OrderPanel.MaximumSize = new System.Drawing.Size(300, 0);
             this.OrderPanel.MinimumSize = new System.Drawing.Size(300, 430);
             this.OrderPanel.Name = "OrderPanel";
-            this.OrderPanel.Size = new System.Drawing.Size(300, 450);
+            this.OrderPanel.Size = new System.Drawing.Size(300, 449);
             this.OrderPanel.TabIndex = 0;
             // 
             // BottomOrderPanel
             // 
             this.BottomOrderPanel.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.BottomOrderPanel.Location = new System.Drawing.Point(0, 411);
+            this.BottomOrderPanel.Location = new System.Drawing.Point(0, 410);
             this.BottomOrderPanel.Margin = new System.Windows.Forms.Padding(0);
             this.BottomOrderPanel.Name = "BottomOrderPanel";
             this.BottomOrderPanel.Size = new System.Drawing.Size(300, 39);
@@ -157,7 +157,7 @@
             this.Contracts.Location = new System.Drawing.Point(0, 44);
             this.Contracts.Margin = new System.Windows.Forms.Padding(0);
             this.Contracts.Name = "Contracts";
-            this.Contracts.Size = new System.Drawing.Size(300, 386);
+            this.Contracts.Size = new System.Drawing.Size(300, 423);
             this.Contracts.TabIndex = 0;
             this.Contracts.UseCompatibleStateImageBehavior = false;
             this.Contracts.View = System.Windows.Forms.View.Details;
@@ -219,60 +219,15 @@
             this.OrdersScreen.Size = new System.Drawing.Size(930, 479);
             this.OrdersScreen.TabIndex = 0;
             // 
-            // Products
-            // 
-            this.Products.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)));
-            this.Products.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
-            this.ProductName,
-            this.ProductColoer,
-            this.ProductWeight,
-            this.ProductSize});
-            this.Products.Location = new System.Drawing.Point(0, 44);
-            this.Products.Margin = new System.Windows.Forms.Padding(0);
-            this.Products.Name = "Products";
-            this.Products.Size = new System.Drawing.Size(330, 406);
-            this.Products.TabIndex = 1;
-            this.Products.UseCompatibleStateImageBehavior = false;
-            this.Products.View = System.Windows.Forms.View.Details;
-            // 
-            // tabPage2
-            // 
-            this.tabPage2.Location = new System.Drawing.Point(4, 22);
-            this.tabPage2.Name = "tabPage2";
-            this.tabPage2.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage2.Size = new System.Drawing.Size(936, 485);
-            this.tabPage2.TabIndex = 1;
-            this.tabPage2.Text = "tabPage2";
-            this.tabPage2.UseVisualStyleBackColor = true;
-            // 
-            // ProductName
-            // 
-            this.ProductName.Text = "Name";
-            this.ProductName.Width = 67;
-            // 
-            // ProductColoer
-            // 
-            this.ProductColoer.Text = "Color";
-            // 
-            // ProductWeight
-            // 
-            this.ProductWeight.Text = "Weight";
-            this.ProductWeight.Width = 55;
-            // 
-            // ProductSize
-            // 
-            this.ProductSize.Text = "Size";
-            this.ProductSize.Width = 132;
-            // 
             // ProductPanel
             // 
             this.ProductPanel.Controls.Add(this.TopProductPanel);
             this.ProductPanel.Controls.Add(this.Products);
             this.ProductPanel.Dock = System.Windows.Forms.DockStyle.Left;
-            this.ProductPanel.Location = new System.Drawing.Point(336, 15);
+            this.ProductPanel.Location = new System.Drawing.Point(375, 15);
             this.ProductPanel.Margin = new System.Windows.Forms.Padding(15);
             this.ProductPanel.Name = "ProductPanel";
-            this.ProductPanel.Size = new System.Drawing.Size(330, 450);
+            this.ProductPanel.Size = new System.Drawing.Size(330, 449);
             this.ProductPanel.TabIndex = 2;
             // 
             // TopProductPanel
@@ -295,6 +250,51 @@
             this.ProductPanelLabel.Size = new System.Drawing.Size(72, 20);
             this.ProductPanelLabel.TabIndex = 0;
             this.ProductPanelLabel.Text = "Products";
+            // 
+            // Products
+            // 
+            this.Products.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)));
+            this.Products.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
+            this.ProductName,
+            this.ProductColoer,
+            this.ProductWeight,
+            this.ProductSize});
+            this.Products.Location = new System.Drawing.Point(0, 44);
+            this.Products.Margin = new System.Windows.Forms.Padding(0);
+            this.Products.Name = "Products";
+            this.Products.Size = new System.Drawing.Size(330, 405);
+            this.Products.TabIndex = 1;
+            this.Products.UseCompatibleStateImageBehavior = false;
+            this.Products.View = System.Windows.Forms.View.Details;
+            // 
+            // ProductName
+            // 
+            this.ProductName.Text = "Name";
+            this.ProductName.Width = 67;
+            // 
+            // ProductColoer
+            // 
+            this.ProductColoer.Text = "Color";
+            // 
+            // ProductWeight
+            // 
+            this.ProductWeight.Text = "Weight";
+            this.ProductWeight.Width = 55;
+            // 
+            // ProductSize
+            // 
+            this.ProductSize.Text = "Size";
+            this.ProductSize.Width = 132;
+            // 
+            // tabPage2
+            // 
+            this.tabPage2.Location = new System.Drawing.Point(4, 22);
+            this.tabPage2.Name = "tabPage2";
+            this.tabPage2.Padding = new System.Windows.Forms.Padding(3);
+            this.tabPage2.Size = new System.Drawing.Size(936, 485);
+            this.tabPage2.TabIndex = 1;
+            this.tabPage2.Text = "tabPage2";
+            this.tabPage2.UseVisualStyleBackColor = true;
             // 
             // Orders
             // 
