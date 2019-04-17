@@ -122,13 +122,21 @@ namespace Domain.Common
                 return this;
             }
 
-            public ContractBuilder SetProducts(IEnumerable<KeyValuePair<IProduct, int>> products)
+            public ContractBuilder SetProducts(KeyValuePair<IProduct, int>[] products)
             {
+                //reset list
+                contract.products = new Dictionary<IProduct, int>();
+                //add new elements
                 foreach(KeyValuePair<IProduct, int> item in products)
                 {
                     contract.AddProduct(item.Key, item.Value);
                 }
                 return this;
+            }
+
+            public IEnumerable<KeyValuePair<IProduct, int>> ShowProducts()
+            {
+                return contract.Products;
             }
 
             private Contract contract;

@@ -14,11 +14,17 @@ namespace CourseWorkClientServer
 {
     public partial class ProductForm : Form
     {
-        public ProductForm()
+        public ProductForm(Action<KeyValuePair<IProduct, int>[]> addProducts, KeyValuePair<Product,int>[] initProducts = null)
         {
             InitializeComponent();
             productRepository = ProductRepository.GetInstance();
             LoadProducts();
+            this.addProducts = addProducts;
+
+            if ((initProducts != null) && (initProducts.Count() != 0))
+            {
+                LoadProductsToCart(initProducts);
+            }
         }
 
         private void CartList_DoubleClick(object sender, EventArgs e)
@@ -58,6 +64,11 @@ namespace CourseWorkClientServer
                     .ToArray()));
         }
 
+        private void LoadProductsToCart(KeyValuePair<Product, int>[] initProducts)
+        {
+            CartList.Items.AddRange(Converter.Convert(initProducts));
+        }
+
         private void SetCountProductsInCart(int count)
         {
             if (count == 0)
@@ -72,6 +83,18 @@ namespace CourseWorkClientServer
             }
         }
 
+        private void OkButton_Click(object sender, EventArgs e)
+        {
+            addProducts(Converter.ToProducts(CartList.Items));
+            Close();
+        }
+
         private IProductRepository productRepository;
+        private Action<KeyValuePair<IProduct, int>[]> addProducts;
+
+        private void ResetCartButton_Click(object sender, EventArgs e)
+        {
+            CartList.Items.Clear();
+        }
     }
 }

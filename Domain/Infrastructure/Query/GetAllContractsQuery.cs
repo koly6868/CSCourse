@@ -12,7 +12,7 @@ namespace Domain.Infrastructure.Query
         {
             Sql = "SELECT BuyContract.ID, " +
 	              "BuyContract.fullPrice, BuyContract.date, Product.ID, Product.typeOfProduct, " +
-	              "Product.weight, Product.lenght, Product.width, Product.height, Product.color, " +
+                  "Product.color, Product.weight, Product.lenght, Product.width, Product.height, " +
 	              "ListOfProducts.count, typeOfDelivery.ID, typeOfDelivery.price, typeOfDelivery.timeOfDelivery, " +
 	              "typeOfDelivery.typeOfTransport, typeOfDelivery.maxWeight, TransportOfLogickalCompany.ID, " +
 	              "TransportOfLogickalCompany.maxWeight, TransportOfLogickalCompany.priceOfOneCar " +

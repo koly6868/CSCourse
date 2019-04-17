@@ -30,6 +30,8 @@
         {
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
             this.NewContractPanel = new System.Windows.Forms.Panel();
+            this.ErrorLabel = new System.Windows.Forms.Label();
+            this.ContactDateBox = new System.Windows.Forms.DateTimePicker();
             this.CreateButton = new System.Windows.Forms.Button();
             this.AddTransportButton = new System.Windows.Forms.Button();
             this.AddProductsButton = new System.Windows.Forms.Button();
@@ -37,8 +39,10 @@
             this.IDContractLabel = new System.Windows.Forms.Label();
             this.IDContractBox = new System.Windows.Forms.TextBox();
             this.NewContractLabel = new System.Windows.Forms.Label();
-            this.ContactDateBox = new System.Windows.Forms.DateTimePicker();
-            this.ErrorLabel = new System.Windows.Forms.Label();
+            this.ProductsCountLabel = new System.Windows.Forms.Label();
+            this.ContProductsValueLabel = new System.Windows.Forms.Label();
+            this.TransportLabel = new System.Windows.Forms.Label();
+            this.TransportValueLabel = new System.Windows.Forms.Label();
             this.tableLayoutPanel1.SuspendLayout();
             this.NewContractPanel.SuspendLayout();
             this.SuspendLayout();
@@ -61,6 +65,10 @@
             // 
             // NewContractPanel
             // 
+            this.NewContractPanel.Controls.Add(this.TransportValueLabel);
+            this.NewContractPanel.Controls.Add(this.TransportLabel);
+            this.NewContractPanel.Controls.Add(this.ContProductsValueLabel);
+            this.NewContractPanel.Controls.Add(this.ProductsCountLabel);
             this.NewContractPanel.Controls.Add(this.ErrorLabel);
             this.NewContractPanel.Controls.Add(this.ContactDateBox);
             this.NewContractPanel.Controls.Add(this.CreateButton);
@@ -77,6 +85,28 @@
             this.NewContractPanel.Size = new System.Drawing.Size(330, 551);
             this.NewContractPanel.TabIndex = 1;
             // 
+            // ErrorLabel
+            // 
+            this.ErrorLabel.AutoSize = true;
+            this.ErrorLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.ErrorLabel.ForeColor = System.Drawing.Color.LightPink;
+            this.ErrorLabel.Location = new System.Drawing.Point(107, 437);
+            this.ErrorLabel.Margin = new System.Windows.Forms.Padding(15);
+            this.ErrorLabel.Name = "ErrorLabel";
+            this.ErrorLabel.Size = new System.Drawing.Size(95, 17);
+            this.ErrorLabel.TabIndex = 9;
+            this.ErrorLabel.Text = "Incorrect data";
+            this.ErrorLabel.Visible = false;
+            // 
+            // ContactDateBox
+            // 
+            this.ContactDateBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.ContactDateBox.Location = new System.Drawing.Point(71, 159);
+            this.ContactDateBox.Margin = new System.Windows.Forms.Padding(15);
+            this.ContactDateBox.Name = "ContactDateBox";
+            this.ContactDateBox.Size = new System.Drawing.Size(131, 23);
+            this.ContactDateBox.TabIndex = 8;
+            // 
             // CreateButton
             // 
             this.CreateButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
@@ -92,18 +122,19 @@
             // AddTransportButton
             // 
             this.AddTransportButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.AddTransportButton.Location = new System.Drawing.Point(66, 262);
+            this.AddTransportButton.Location = new System.Drawing.Point(71, 358);
             this.AddTransportButton.Margin = new System.Windows.Forms.Padding(15);
             this.AddTransportButton.Name = "AddTransportButton";
             this.AddTransportButton.Size = new System.Drawing.Size(136, 26);
             this.AddTransportButton.TabIndex = 6;
             this.AddTransportButton.Text = "Add transport";
             this.AddTransportButton.UseVisualStyleBackColor = true;
+            this.AddTransportButton.Click += new System.EventHandler(this.AddTransportButton_Click);
             // 
             // AddProductsButton
             // 
             this.AddProductsButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.AddProductsButton.Location = new System.Drawing.Point(66, 206);
+            this.AddProductsButton.Location = new System.Drawing.Point(71, 255);
             this.AddProductsButton.Margin = new System.Windows.Forms.Padding(15);
             this.AddProductsButton.Name = "AddProductsButton";
             this.AddProductsButton.Size = new System.Drawing.Size(136, 26);
@@ -154,27 +185,49 @@
             this.NewContractLabel.TabIndex = 0;
             this.NewContractLabel.Text = "Contract";
             // 
-            // ContactDateBox
+            // ProductsCountLabel
             // 
-            this.ContactDateBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.ContactDateBox.Location = new System.Drawing.Point(71, 159);
-            this.ContactDateBox.Margin = new System.Windows.Forms.Padding(15);
-            this.ContactDateBox.Name = "ContactDateBox";
-            this.ContactDateBox.Size = new System.Drawing.Size(131, 23);
-            this.ContactDateBox.TabIndex = 8;
+            this.ProductsCountLabel.AutoSize = true;
+            this.ProductsCountLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.ProductsCountLabel.Location = new System.Drawing.Point(15, 208);
+            this.ProductsCountLabel.Margin = new System.Windows.Forms.Padding(15);
+            this.ProductsCountLabel.Name = "ProductsCountLabel";
+            this.ProductsCountLabel.Size = new System.Drawing.Size(104, 17);
+            this.ProductsCountLabel.TabIndex = 10;
+            this.ProductsCountLabel.Text = "Count products";
             // 
-            // ErrorLabel
+            // ContProductsValueLabel
             // 
-            this.ErrorLabel.AutoSize = true;
-            this.ErrorLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.ErrorLabel.ForeColor = System.Drawing.Color.LightPink;
-            this.ErrorLabel.Location = new System.Drawing.Point(107, 437);
-            this.ErrorLabel.Margin = new System.Windows.Forms.Padding(15);
-            this.ErrorLabel.Name = "ErrorLabel";
-            this.ErrorLabel.Size = new System.Drawing.Size(95, 17);
-            this.ErrorLabel.TabIndex = 9;
-            this.ErrorLabel.Text = "Incorrect data";
-            this.ErrorLabel.Visible = false;
+            this.ContProductsValueLabel.AutoSize = true;
+            this.ContProductsValueLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.ContProductsValueLabel.Location = new System.Drawing.Point(149, 208);
+            this.ContProductsValueLabel.Margin = new System.Windows.Forms.Padding(15);
+            this.ContProductsValueLabel.Name = "ContProductsValueLabel";
+            this.ContProductsValueLabel.Size = new System.Drawing.Size(16, 17);
+            this.ContProductsValueLabel.TabIndex = 11;
+            this.ContProductsValueLabel.Text = "0";
+            // 
+            // TransportLabel
+            // 
+            this.TransportLabel.AutoSize = true;
+            this.TransportLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.TransportLabel.Location = new System.Drawing.Point(15, 311);
+            this.TransportLabel.Margin = new System.Windows.Forms.Padding(15);
+            this.TransportLabel.Name = "TransportLabel";
+            this.TransportLabel.Size = new System.Drawing.Size(70, 17);
+            this.TransportLabel.TabIndex = 12;
+            this.TransportLabel.Text = "Transport";
+            // 
+            // TransportValueLabel
+            // 
+            this.TransportValueLabel.AutoSize = true;
+            this.TransportValueLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.TransportValueLabel.Location = new System.Drawing.Point(149, 311);
+            this.TransportValueLabel.Margin = new System.Windows.Forms.Padding(15);
+            this.TransportValueLabel.Name = "TransportValueLabel";
+            this.TransportValueLabel.Size = new System.Drawing.Size(13, 17);
+            this.TransportValueLabel.TabIndex = 13;
+            this.TransportValueLabel.Text = "-";
             // 
             // NewContractForm
             // 
@@ -185,6 +238,7 @@
             this.Controls.Add(this.tableLayoutPanel1);
             this.Name = "NewContractForm";
             this.Text = "NewContractForm";
+            this.Load += new System.EventHandler(this.NewContractForm_Load);
             this.tableLayoutPanel1.ResumeLayout(false);
             this.NewContractPanel.ResumeLayout(false);
             this.NewContractPanel.PerformLayout();
@@ -205,5 +259,9 @@
         private System.Windows.Forms.Button CreateButton;
         private System.Windows.Forms.DateTimePicker ContactDateBox;
         private System.Windows.Forms.Label ErrorLabel;
+        private System.Windows.Forms.Label TransportValueLabel;
+        private System.Windows.Forms.Label TransportLabel;
+        private System.Windows.Forms.Label ContProductsValueLabel;
+        private System.Windows.Forms.Label ProductsCountLabel;
     }
 }
