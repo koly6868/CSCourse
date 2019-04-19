@@ -10,7 +10,7 @@ namespace Domain.Infrastructure
     {
         T Get(int ID);
         bool Update(T el);
-        bool Save(T el);
+        bool Add(T el);
         IEnumerable<T> GetAll();
         bool Delite(int ID);
     }

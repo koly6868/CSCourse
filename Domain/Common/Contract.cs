@@ -14,7 +14,7 @@ namespace Domain.Common
         public ITransport AdditionalTransport { get; private set; }
         public int FullPrice { get; private set; }
         public DateTime Date { get; private set; }
-        //public DateTimeOffset DateOfImplementation { get; private set; }
+        public Company Company { get; set; }
 
         public bool ChangeTransport(ITransport transport)
         {

@@ -37,6 +37,8 @@
             this.CartSize = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.CartCount = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.CartTopPaanel = new System.Windows.Forms.Panel();
+            this.OkButton = new System.Windows.Forms.Button();
+            this.ResetCartButton = new System.Windows.Forms.Button();
             this.CartLabel = new System.Windows.Forms.Label();
             this.ProductsPanel = new System.Windows.Forms.Panel();
             this.Products = new System.Windows.Forms.ListView();
@@ -47,14 +49,11 @@
             this.TopProductsPanel = new System.Windows.Forms.Panel();
             this.ProductsLabel = new System.Windows.Forms.Label();
             this.TopBar = new System.Windows.Forms.Panel();
-            this.OkButton = new System.Windows.Forms.Button();
-            this.ResetCartButton = new System.Windows.Forms.Button();
             this.tableLayoutPanel1.SuspendLayout();
             this.CartPanel.SuspendLayout();
             this.CartTopPaanel.SuspendLayout();
             this.ProductsPanel.SuspendLayout();
             this.TopProductsPanel.SuspendLayout();
-            this.TopBar.SuspendLayout();
             this.SuspendLayout();
             // 
             // tableLayoutPanel1
@@ -133,6 +132,7 @@
             // CartTopPaanel
             // 
             this.CartTopPaanel.BackColor = System.Drawing.SystemColors.ActiveCaption;
+            this.CartTopPaanel.Controls.Add(this.OkButton);
             this.CartTopPaanel.Controls.Add(this.ResetCartButton);
             this.CartTopPaanel.Controls.Add(this.CartLabel);
             this.CartTopPaanel.Dock = System.Windows.Forms.DockStyle.Top;
@@ -141,6 +141,30 @@
             this.CartTopPaanel.Name = "CartTopPaanel";
             this.CartTopPaanel.Size = new System.Drawing.Size(330, 45);
             this.CartTopPaanel.TabIndex = 0;
+            // 
+            // OkButton
+            // 
+            this.OkButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.OkButton.Location = new System.Drawing.Point(5, 10);
+            this.OkButton.Margin = new System.Windows.Forms.Padding(5);
+            this.OkButton.Name = "OkButton";
+            this.OkButton.Size = new System.Drawing.Size(75, 25);
+            this.OkButton.TabIndex = 0;
+            this.OkButton.Text = "Ok";
+            this.OkButton.UseVisualStyleBackColor = true;
+            this.OkButton.Click += new System.EventHandler(this.OkButton_Click);
+            // 
+            // ResetCartButton
+            // 
+            this.ResetCartButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.ResetCartButton.Location = new System.Drawing.Point(250, 10);
+            this.ResetCartButton.Margin = new System.Windows.Forms.Padding(5);
+            this.ResetCartButton.Name = "ResetCartButton";
+            this.ResetCartButton.Size = new System.Drawing.Size(75, 25);
+            this.ResetCartButton.TabIndex = 1;
+            this.ResetCartButton.Text = "Reset";
+            this.ResetCartButton.UseVisualStyleBackColor = true;
+            this.ResetCartButton.Click += new System.EventHandler(this.ResetCartButton_Click);
             // 
             // CartLabel
             // 
@@ -223,7 +247,6 @@
             // TopBar
             // 
             this.TopBar.BackColor = System.Drawing.SystemColors.AppWorkspace;
-            this.TopBar.Controls.Add(this.OkButton);
             this.TopBar.Dock = System.Windows.Forms.DockStyle.Top;
             this.TopBar.Location = new System.Drawing.Point(0, 0);
             this.TopBar.Margin = new System.Windows.Forms.Padding(0);
@@ -232,30 +255,6 @@
             this.TopBar.Name = "TopBar";
             this.TopBar.Size = new System.Drawing.Size(960, 40);
             this.TopBar.TabIndex = 3;
-            // 
-            // OkButton
-            // 
-            this.OkButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.OkButton.Location = new System.Drawing.Point(127, 10);
-            this.OkButton.Margin = new System.Windows.Forms.Padding(5);
-            this.OkButton.Name = "OkButton";
-            this.OkButton.Size = new System.Drawing.Size(75, 25);
-            this.OkButton.TabIndex = 0;
-            this.OkButton.Text = "Ok";
-            this.OkButton.UseVisualStyleBackColor = true;
-            this.OkButton.Click += new System.EventHandler(this.OkButton_Click);
-            // 
-            // ResetCartButton
-            // 
-            this.ResetCartButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.ResetCartButton.Location = new System.Drawing.Point(250, 10);
-            this.ResetCartButton.Margin = new System.Windows.Forms.Padding(5);
-            this.ResetCartButton.Name = "ResetCartButton";
-            this.ResetCartButton.Size = new System.Drawing.Size(75, 23);
-            this.ResetCartButton.TabIndex = 1;
-            this.ResetCartButton.Text = "Reset";
-            this.ResetCartButton.UseVisualStyleBackColor = true;
-            this.ResetCartButton.Click += new System.EventHandler(this.ResetCartButton_Click);
             // 
             // ProductForm
             // 
@@ -276,7 +275,6 @@
             this.ProductsPanel.ResumeLayout(false);
             this.TopProductsPanel.ResumeLayout(false);
             this.TopProductsPanel.PerformLayout();
-            this.TopBar.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }

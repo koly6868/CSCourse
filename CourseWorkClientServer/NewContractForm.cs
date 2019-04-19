@@ -9,6 +9,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using Domain.Common;
 using static Domain.Common.Contract;
+using Domain.Infrastructure;
 
 namespace CourseWorkClientServer
 {
@@ -18,6 +19,7 @@ namespace CourseWorkClientServer
         {
             InitializeComponent();
             contractBuilder = Contract.CreateBuilder();
+            contractRepository = ContractRepository.GetInstance();
         }
 
         private void AddProductsButton_Click(object sender, EventArgs e)
@@ -35,6 +37,12 @@ namespace CourseWorkClientServer
             ContProductsValueLabel.Text = products.Sum(el => el.Value).ToString();
         }
 
+        private void AddTransportToContract(ITransport transport)
+        {
+            contractBuilder.SetTransport(transport);
+            TransportValueLabel.Text = transport.TypeOfTransport;
+        }
+
 
         private void CreateButton_Click(object sender, EventArgs e)
         {
@@ -42,8 +50,7 @@ namespace CourseWorkClientServer
             {
                 contractBuilder.SetID(int.Parse(IDContractBox.Text));
                 contractBuilder.SetDate(ContactDateBox.Value);
-
-                contractBuilder.Build();
+                contractRepository.Add(contractBuilder.Build());
             }
             catch(Exception ex)
             {
@@ -51,16 +58,19 @@ namespace CourseWorkClientServer
             }
         }
 
-        private ContractBuilder contractBuilder;
 
         private void AddTransportButton_Click(object sender, EventArgs e)
         {
-
+            TransportForm form = new TransportForm(AddTransportToContract);
+            form.ShowDialog();
         }
 
         private void NewContractForm_Load(object sender, EventArgs e)
         {
 
         }
+
+        private ContractRepository contractRepository;
+        private ContractBuilder contractBuilder;
     }
 }

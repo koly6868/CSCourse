@@ -97,5 +97,22 @@ namespace CourseWorkClientServer
             }
             return products.ToArray();
         }
+
+        public static ListViewItem[] Convert(ITransport[] transport)
+        {
+            ListViewItem[] items = new ListViewItem[transport.Length];
+            for (int i = 0; i < items.Length; i++)
+            {
+                items[i] = new ListViewItem(new string[]{
+                    transport[i].TypeOfTransport,
+                    transport[i].MaxWeight.ToString(),
+                    transport[i].TimeOfDelivery.ToString(),
+                    transport[i].MaxWeight.ToString(),
+                    transport[i].Price.ToString()
+                });
+                items[i].Tag = transport[i].ID;
+            }
+            return items;
+        }
     }
 }

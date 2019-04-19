@@ -51,7 +51,7 @@ namespace Domain.Infrastructure
             }
         }
 
-        public bool Save(Product el)
+        public bool Add(Product el)
         {
             throw new NotImplementedException();
         }

@@ -7,6 +7,8 @@ using System.Threading.Tasks;
 using Domain.Infrastructure.Query;
 using System.Data.SqlClient;
 using Dapper;
+using Domain.Infrastructure.Request;
+
 namespace Domain.Infrastructure
 {
     public class ContractRepository : IRepository<Contract>
@@ -59,9 +61,11 @@ namespace Domain.Infrastructure
             return contracts;
         }
 
-        public bool Save(Contract el)
+        public bool Add(Contract el)
         {
-            throw new NotImplementedException();
+            IRequest request = new CreateContractRequest(el);
+
+            return true;
         }
 
         public bool Update(Contract el)
