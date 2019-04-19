@@ -11,31 +11,51 @@ namespace Domain.Infrastructure.Request
     {
         public CreateContractRequest(Contract contract)
         {
-            Sql = "exec CreateBlankOfContract @ID, @IDCompany, @Date, @IDTransport, @IDAdditionalTransport "+
+            Sql = $"exec CreateBlankOfContract {contract.ID}, " +
+                $"{contract.Company.ID.ToString()}, " +
+                $"'{TransfromDate(contract.Date)}', " +
+                $"{(contract.Transport == null ? "null" : contract.Transport.ID.ToString())}, " +
+                $"{(contract.AdditionalTransport == null ? "null" : contract.AdditionalTransport.ID.ToString())} "+
+                "INSERT INTO Price(ID_contract,ID_product,price) " +
+                "VALUES " + string.Join(", ", GeneratePrices(contract)) + " "+
                 "INSERT INTO ListOfProducts(ID_contract,ID_product,count) "+
-                "VALUES "+ string.Join(", ",GenerateProductsList())
-                ;
+                "VALUES "+ string.Join(", ",GenerateProductsList(contract));
         }
 
-        public object GetParams()
+        private string[] GenerateProductsList(Contract contract)
         {
-            return new { contract.ID,
-                        IDCompany = contract.Company.ID,
-                        contract.Date,
-                        IDTransport = contract.Transport.ID,
-                        IDAdditionalTransport = contract.AdditionalTransport.ID
-            };
+            if (contract.Products != null)
+            {
+                return contract.Products.Select(pr =>
+                    $"({contract.ID},{pr.Key.ID},{pr.Value})")
+                    .ToArray();
+            }
+            else
+            {
+                return new string[0];
+            }
         }
 
-        private string[] GenerateProductsList()
+        private string[] GeneratePrices(Contract contract)
         {
-            return contract.Products.Select(pr =>
-                $"{contract.ID},{pr.Key.ID},{pr.Value}")
-                .ToArray();
+            if (contract.Products != null)
+            {
+                return contract.Products.Select(pr =>
+                    $"({contract.ID},{pr.Key.ID},{pr.Key.Price})")
+                    .ToArray();
+            }
+            else
+            {
+                return new string[0];
+            }
+        }
+
+        private string TransfromDate(DateTime date)
+        {
+            return $"{date.Year}.{date.Month}.{date.Day}";
         }
 
 
         public string Sql { get; }
-        private Contract contract;
     }
 }

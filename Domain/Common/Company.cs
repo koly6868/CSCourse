@@ -24,6 +24,11 @@ namespace Domain.Common
             return other.ID == ID;
         }
 
+        public override string ToString()
+        {
+            return Name;
+        }
+
         private List<AdressOfDepartment> adresses = new List<AdressOfDepartment>();
 
         

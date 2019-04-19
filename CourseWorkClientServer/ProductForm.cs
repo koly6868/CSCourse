@@ -45,8 +45,8 @@ namespace CourseWorkClientServer
             }
             else
             {
-                item.SubItems[item.SubItems.Count - 1].Text = 
-                    (int.Parse(item.SubItems[item.SubItems.Count - 1].Text) + 1).ToString();
+                item.SubItems[item.SubItems.Count - 2].Text = 
+                    (int.Parse(item.SubItems[item.SubItems.Count - 2].Text) + 1).ToString();
             }
         }
 
@@ -69,7 +69,7 @@ namespace CourseWorkClientServer
             CartList.Items.AddRange(Converter.Convert(initProducts));
         }
 
-        private void SetCountProductsInCart(int count)
+        private void SetCountProductsInCart(int count, int price)
         {
             if (count == 0)
             {
@@ -78,8 +78,10 @@ namespace CourseWorkClientServer
             else
             {
                 //index of count of product
-                int index = CartList.SelectedItems[0].SubItems.Count - 1;
-                CartList.SelectedItems[0].SubItems[index].Text = count.ToString();
+                int indexCount = CartList.SelectedItems[0].SubItems.Count - 2;
+                int indexPrice = CartList.SelectedItems[0].SubItems.Count - 1;
+                CartList.SelectedItems[0].SubItems[indexCount].Text = count.ToString();
+                CartList.SelectedItems[0].SubItems[indexPrice].Text = price.ToString();
             }
         }
 

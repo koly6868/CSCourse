@@ -64,7 +64,25 @@ namespace Domain.Infrastructure
         public bool Add(Contract el)
         {
             IRequest request = new CreateContractRequest(el);
+            try
+            {
+                using (var connection = new SqlConnection(connectionString))
+                {
+                    connection.Open();
 
+                    using (var transaction = connection.BeginTransaction())
+                    {
+
+                        connection.Execute(request.Sql, transaction : transaction);
+                        transaction.Commit();
+
+                    }
+                }
+            }
+            catch(Exception e)
+            {
+                return false;
+            }
             return true;
         }
 

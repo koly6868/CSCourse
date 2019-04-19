@@ -49,6 +49,7 @@
             this.TopProductsPanel = new System.Windows.Forms.Panel();
             this.ProductsLabel = new System.Windows.Forms.Label();
             this.TopBar = new System.Windows.Forms.Panel();
+            this.CartPrice = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.tableLayoutPanel1.SuspendLayout();
             this.CartPanel.SuspendLayout();
             this.CartTopPaanel.SuspendLayout();
@@ -95,7 +96,8 @@
             this.CartColor,
             this.CartWeight,
             this.CartSize,
-            this.CartCount});
+            this.CartCount,
+            this.CartPrice});
             this.CartList.Location = new System.Drawing.Point(0, 45);
             this.CartList.Margin = new System.Windows.Forms.Padding(0);
             this.CartList.Name = "CartList";
@@ -108,7 +110,6 @@
             // CartName
             // 
             this.CartName.Text = "Name";
-            this.CartName.Width = 67;
             // 
             // CartColor
             // 
@@ -123,11 +124,12 @@
             // CartSize
             // 
             this.CartSize.Text = "Size";
-            this.CartSize.Width = 81;
+            this.CartSize.Width = 69;
             // 
             // CartCount
             // 
             this.CartCount.Text = "Count";
+            this.CartCount.Width = 52;
             // 
             // CartTopPaanel
             // 
@@ -221,7 +223,7 @@
             // ProductSize
             // 
             this.ProductSize.Text = "Size";
-            this.ProductSize.Width = 132;
+            this.ProductSize.Width = 110;
             // 
             // TopProductsPanel
             // 
@@ -255,6 +257,10 @@
             this.TopBar.Name = "TopBar";
             this.TopBar.Size = new System.Drawing.Size(960, 40);
             this.TopBar.TabIndex = 3;
+            // 
+            // CartPrice
+            // 
+            this.CartPrice.Text = "Price";
             // 
             // ProductForm
             // 
@@ -302,5 +308,6 @@
         private System.Windows.Forms.Panel TopBar;
         private System.Windows.Forms.Button OkButton;
         private System.Windows.Forms.Button ResetCartButton;
+        private System.Windows.Forms.ColumnHeader CartPrice;
     }
 }

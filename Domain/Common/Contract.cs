@@ -134,6 +134,12 @@ namespace Domain.Common
                 return this;
             }
 
+            public ContractBuilder SetCompany(Company company)
+            {
+                contract.Company = company;
+                return this;
+            }
+
             public IEnumerable<KeyValuePair<IProduct, int>> ShowProducts()
             {
                 return contract.Products;

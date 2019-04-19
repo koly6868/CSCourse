@@ -11,19 +11,14 @@ using Domain.Infrastructure.Query;
 namespace Domain.Infrastructure
 {
     public class CompanyRepository : IRepository<Company>
-    {
-        public CompanyRepository(string connectionStirng)
-        {
-            this.connectionStirng = connectionStirng ?? throw new ArgumentNullException(nameof(connectionStirng));
-        }
-
+    { 
         public Company Get(int ID)
         {
             IQuery query = new GetCompanyQuery();
             Company res = null;
             try
             {
-                using (var connection = new SqlConnection(connectionStirng))
+                using (var connection = new SqlConnection(connectionString))
                 {
                     //reducing into one object
                     connection.Query<Company, AdressOfDepartment, Company>(
@@ -66,7 +61,7 @@ namespace Domain.Infrastructure
             List<Company> res = new List<Company>();
             try
             {
-                using (var connection = new SqlConnection(connectionStirng))
+                using (var connection = new SqlConnection(connectionString))
                 {
                     //reducing into one object
                     connection.Query<Company, AdressOfDepartment, Company>(
@@ -104,6 +99,17 @@ namespace Domain.Infrastructure
             throw new NotImplementedException();
         }
 
-        private readonly string connectionStirng;
+        public static void Configure(string connectionString)
+        {
+            repository.connectionString = connectionString;
+        }
+
+        public static CompanyRepository GetInstance()
+        {
+            return repository;
+        }
+
+        private static CompanyRepository repository = new CompanyRepository();
+        private string connectionString;
     }
 }

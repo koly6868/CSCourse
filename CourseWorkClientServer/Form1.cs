@@ -18,7 +18,6 @@ namespace CourseWorkClientServer
         public Form1(IConfiguration configuration)
         {
             this.configuration = configuration;
-            repository = new CompanyRepository(configuration["ConnectionString"]);
             InitializeComponent();
         }
 

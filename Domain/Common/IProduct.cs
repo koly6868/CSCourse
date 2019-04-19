@@ -4,5 +4,6 @@
     {
         int ID { get; }
         string TypeOfProduct { get; }
+        int Price { get; }
     }
 }

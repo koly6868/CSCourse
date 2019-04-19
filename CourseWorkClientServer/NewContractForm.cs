@@ -20,6 +20,8 @@ namespace CourseWorkClientServer
             InitializeComponent();
             contractBuilder = Contract.CreateBuilder();
             contractRepository = ContractRepository.GetInstance();
+            companyRepository = CompanyRepository.GetInstance();
+            LoadCompanies();
         }
 
         private void AddProductsButton_Click(object sender, EventArgs e)
@@ -70,7 +72,18 @@ namespace CourseWorkClientServer
 
         }
 
+        private void LoadCompanies()
+        {
+            CompanyBox.Items.AddRange(companyRepository.GetAll().ToArray());
+        }
+
+        private void CompanyBox_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            contractBuilder.SetCompany((Company)CompanyBox.SelectedItem);
+        }
+
         private ContractRepository contractRepository;
         private ContractBuilder contractBuilder;
+        private CompanyRepository companyRepository;
     }
 }

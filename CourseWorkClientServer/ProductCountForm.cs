@@ -12,7 +12,7 @@ namespace CourseWorkClientServer
 {
     public partial class ProductCountForm : Form
     {
-        public ProductCountForm(Action<int> handler)
+        public ProductCountForm(Action<int,int> handler)
         {
             InitializeComponent();
             this.handler = handler;
@@ -21,12 +21,14 @@ namespace CourseWorkClientServer
         private void OkButton_Click(object sender, EventArgs e)
         {
             int count;
+            int price;
             try
             {
                 count = int.Parse(CountBox.Text);
-                if (count >= 0)
+                price = int.Parse(PriceBox.Text);
+                if (count >= 0 && price >= 0)
                 {
-                    handler(count);
+                    handler(count, price);
                 }
             }
             catch(Exception ex)
@@ -36,6 +38,6 @@ namespace CourseWorkClientServer
             Close();
         }
 
-        private Action<int> handler;
+        private Action<int,int> handler;
     }
 }

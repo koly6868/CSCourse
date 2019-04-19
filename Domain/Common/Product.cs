@@ -8,18 +8,7 @@ namespace Domain.Common
 {
     public class Product : IProduct, IEquatable<IProduct>
     {
-        //public Product(int ID, string typeOfProduct, string color, float weight, int lenght, int width, int height)
-        //{
-        //    this.ID = ID;
-        //    TypeOfProduct = typeOfProduct ?? throw new ArgumentNullException(nameof(typeOfProduct));
-        //    Color = color ?? throw new ArgumentNullException(nameof(color));
-        //    Weight = weight;
-        //    Lenght = lenght;
-        //    Width = width;
-        //    Height = height;
-        //}
-
-        public static Product Create(int ID, string typeOfProduct, string color, double weight, int lenght, int width, int height)
+        public static Product Create(int ID, string typeOfProduct, string color, double weight, int lenght, int width, int height, int Price)
         {
             return new Product
             {
@@ -29,7 +18,8 @@ namespace Domain.Common
                 Weight = weight,
                 Lenght = lenght,
                 Width = width,
-                Height = height
+                Height = height,
+                Price = Price
             };
         }
 
@@ -40,6 +30,7 @@ namespace Domain.Common
         public int Lenght { get; private set; }
         public int Width { get; private set; }
         public int Height { get; private set; }
+        public int Price { get; private set; }
 
         public bool Equals(IProduct other)
         {

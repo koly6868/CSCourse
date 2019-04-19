@@ -36,7 +36,8 @@ namespace CourseWorkClientServer
                     products[i].Color,
                     products[i].Weight.ToString(),
                     $"{products[i].Lenght}x{products[i].Width}x{products[i].Height}",
-                    "1"
+                    "1",
+                    products[i].Price.ToString()
                 });
                 items[i].Tag = products[i].ID;
             }
@@ -53,7 +54,8 @@ namespace CourseWorkClientServer
                     products[i].Key.Color,
                     products[i].Key.Weight.ToString(),
                     $"{products[i].Key.Lenght}x{products[i].Key.Width}x{products[i].Key.Height}",
-                    products[i].Value.ToString()
+                    products[i].Value.ToString(),
+                    products[i].Key.Price.ToString()
                 });
                 items[i].Tag = products[i].Key.ID;
             }
@@ -91,7 +93,8 @@ namespace CourseWorkClientServer
                     double.Parse(qualities[2]),
                     size[0],
                     size[1],
-                    size[2]
+                    size[2],
+                    int.Parse(qualities[5])
                     ),
                     int.Parse(qualities[4])));
             }
