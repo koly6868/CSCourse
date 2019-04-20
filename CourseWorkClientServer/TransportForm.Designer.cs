@@ -31,6 +31,8 @@
             this.TopBar = new System.Windows.Forms.Panel();
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
             this.TransportPanel = new System.Windows.Forms.Panel();
+            this.BottomTransportPanel = new System.Windows.Forms.Panel();
+            this.OkButton = new System.Windows.Forms.Button();
             this.TransportList = new System.Windows.Forms.ListView();
             this.TransportName = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.TransportMaxWeight = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
@@ -38,12 +40,10 @@
             this.TransportTimeOfDelivery = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.TopTransportPanel = new System.Windows.Forms.Panel();
             this.TransportLabel = new System.Windows.Forms.Label();
-            this.OkButton = new System.Windows.Forms.Button();
-            this.BottomTransportPanel = new System.Windows.Forms.Panel();
             this.tableLayoutPanel1.SuspendLayout();
             this.TransportPanel.SuspendLayout();
-            this.TopTransportPanel.SuspendLayout();
             this.BottomTransportPanel.SuspendLayout();
+            this.TopTransportPanel.SuspendLayout();
             this.SuspendLayout();
             // 
             // TopBar
@@ -84,6 +84,29 @@
             this.TransportPanel.Name = "TransportPanel";
             this.TransportPanel.Size = new System.Drawing.Size(325, 484);
             this.TransportPanel.TabIndex = 0;
+            // 
+            // BottomTransportPanel
+            // 
+            this.BottomTransportPanel.BackColor = System.Drawing.SystemColors.ActiveCaption;
+            this.BottomTransportPanel.Controls.Add(this.OkButton);
+            this.BottomTransportPanel.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.BottomTransportPanel.Location = new System.Drawing.Point(0, 439);
+            this.BottomTransportPanel.Margin = new System.Windows.Forms.Padding(0);
+            this.BottomTransportPanel.Name = "BottomTransportPanel";
+            this.BottomTransportPanel.Size = new System.Drawing.Size(325, 45);
+            this.BottomTransportPanel.TabIndex = 3;
+            // 
+            // OkButton
+            // 
+            this.OkButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.OkButton.Location = new System.Drawing.Point(245, 15);
+            this.OkButton.Margin = new System.Windows.Forms.Padding(5);
+            this.OkButton.Name = "OkButton";
+            this.OkButton.Size = new System.Drawing.Size(75, 25);
+            this.OkButton.TabIndex = 1;
+            this.OkButton.Text = "Ok";
+            this.OkButton.UseVisualStyleBackColor = true;
+            this.OkButton.Click += new System.EventHandler(this.OkButton_Click);
             // 
             // TransportList
             // 
@@ -141,29 +164,6 @@
             this.TransportLabel.TabIndex = 0;
             this.TransportLabel.Text = "Transport";
             // 
-            // OkButton
-            // 
-            this.OkButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.OkButton.Location = new System.Drawing.Point(245, 15);
-            this.OkButton.Margin = new System.Windows.Forms.Padding(5);
-            this.OkButton.Name = "OkButton";
-            this.OkButton.Size = new System.Drawing.Size(75, 25);
-            this.OkButton.TabIndex = 1;
-            this.OkButton.Text = "Ok";
-            this.OkButton.UseVisualStyleBackColor = true;
-            this.OkButton.Click += new System.EventHandler(this.OkButton_Click);
-            // 
-            // BottomTransportPanel
-            // 
-            this.BottomTransportPanel.BackColor = System.Drawing.SystemColors.ActiveCaption;
-            this.BottomTransportPanel.Controls.Add(this.OkButton);
-            this.BottomTransportPanel.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.BottomTransportPanel.Location = new System.Drawing.Point(0, 439);
-            this.BottomTransportPanel.Margin = new System.Windows.Forms.Padding(0);
-            this.BottomTransportPanel.Name = "BottomTransportPanel";
-            this.BottomTransportPanel.Size = new System.Drawing.Size(325, 45);
-            this.BottomTransportPanel.TabIndex = 3;
-            // 
             // TransportForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -177,9 +177,9 @@
             this.Text = "TransportForm";
             this.tableLayoutPanel1.ResumeLayout(false);
             this.TransportPanel.ResumeLayout(false);
+            this.BottomTransportPanel.ResumeLayout(false);
             this.TopTransportPanel.ResumeLayout(false);
             this.TopTransportPanel.PerformLayout();
-            this.BottomTransportPanel.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }

@@ -29,7 +29,12 @@ namespace CourseWorkClientServer
 
         private void CartList_DoubleClick(object sender, EventArgs e)
         {
-            ProductCountForm form = new ProductCountForm(SetCountProductsInCart);
+            int countIndex = CartList.SelectedItems[0].SubItems.Count - 2;
+            int priceIndex = CartList.SelectedItems[0].SubItems.Count - 1;
+            
+            ProductCountForm form = new ProductCountForm(SetCountProductsInCart,
+                int.Parse(CartList.SelectedItems[0].SubItems[countIndex].Text),
+                int.Parse(CartList.SelectedItems[0].SubItems[priceIndex].Text));
             form.ShowDialog();
         }
 
@@ -52,7 +57,6 @@ namespace CourseWorkClientServer
 
         private void ProductForm_Load(object sender, EventArgs e)
         {
-
         }
 
         private void LoadProducts()

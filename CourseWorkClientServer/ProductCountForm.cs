@@ -12,10 +12,12 @@ namespace CourseWorkClientServer
 {
     public partial class ProductCountForm : Form
     {
-        public ProductCountForm(Action<int,int> handler)
+        public ProductCountForm(Action<int,int> handler, int productCount, int productPrice)
         {
             InitializeComponent();
             this.handler = handler;
+            PriceBox.Text = productPrice.ToString();
+            CountBox.Text = productCount.ToString();
         }
 
         private void OkButton_Click(object sender, EventArgs e)

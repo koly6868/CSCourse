@@ -17,11 +17,11 @@ namespace Domain.Infrastructure.Query
 	              "typeOfDelivery.typeOfTransport, typeOfDelivery.maxWeight, TransportOfLogickalCompany.ID, " +
 	              "TransportOfLogickalCompany.maxWeight, TransportOfLogickalCompany.priceOfOneCar " +
               "FROM[Purchase department].[dbo].[BuyContract] " +
-                  "JOIN ListOfProducts ON ListOfProducts.ID_contract = BuyContract.ID " +
-                  "JOIN Product ON Product.ID = ListOfProducts.ID_product " +
-                  "JOIN Delivery ON Delivery.ID = BuyContract.ID_delivery " +
-                  "JOIN typeOfDelivery ON typeOfDelivery.ID = Delivery.ID_typeDelivery " +
-                  "JOIN TransportOfLogickalCompany ON TransportOfLogickalCompany.ID = Delivery.ID_additionalCars";
+                  "LEFT JOIN ListOfProducts ON ListOfProducts.ID_contract = BuyContract.ID " +
+                  "LEFT JOIN Product ON Product.ID = ListOfProducts.ID_product " +
+                  "LEFT JOIN Delivery ON Delivery.ID = BuyContract.ID_delivery " +
+                  "LEFT JOIN typeOfDelivery ON typeOfDelivery.ID = Delivery.ID_typeDelivery " +
+                  "LEFT JOIN TransportOfLogickalCompany ON TransportOfLogickalCompany.ID = Delivery.ID_additionalCars";
         }
         public string Sql { get; }
     }

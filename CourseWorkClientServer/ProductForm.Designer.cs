@@ -36,6 +36,7 @@
             this.CartWeight = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.CartSize = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.CartCount = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.CartPrice = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.CartTopPaanel = new System.Windows.Forms.Panel();
             this.OkButton = new System.Windows.Forms.Button();
             this.ResetCartButton = new System.Windows.Forms.Button();
@@ -49,7 +50,6 @@
             this.TopProductsPanel = new System.Windows.Forms.Panel();
             this.ProductsLabel = new System.Windows.Forms.Label();
             this.TopBar = new System.Windows.Forms.Panel();
-            this.CartPrice = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.tableLayoutPanel1.SuspendLayout();
             this.CartPanel.SuspendLayout();
             this.CartTopPaanel.SuspendLayout();
@@ -130,6 +130,10 @@
             // 
             this.CartCount.Text = "Count";
             this.CartCount.Width = 52;
+            // 
+            // CartPrice
+            // 
+            this.CartPrice.Text = "Price";
             // 
             // CartTopPaanel
             // 
@@ -257,10 +261,6 @@
             this.TopBar.Name = "TopBar";
             this.TopBar.Size = new System.Drawing.Size(960, 40);
             this.TopBar.TabIndex = 3;
-            // 
-            // CartPrice
-            // 
-            this.CartPrice.Text = "Price";
             // 
             // ProductForm
             // 
