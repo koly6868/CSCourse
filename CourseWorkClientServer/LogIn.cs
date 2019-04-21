@@ -11,6 +11,8 @@ using Domain.Infrastructure;
 using Domain.Infrastructure.Security;
 using Domain.Common;
 using Microsoft.Extensions.Configuration;
+using CourseWorkClientServer.AccountantForms;
+using CourseWorkClientServer.WorkerForms;
 
 namespace CourseWorkClientServer
 {
@@ -31,21 +33,23 @@ namespace CourseWorkClientServer
             if (result.IsOk)
             {
                 RepositoryConfigure(security.GetConnectionString());
-                switch ((Roles)result.value)
+                Form form;
+                switch ((Role)result.value)
                 {
-                    case Roles.Buyer:
+                    case Role.Buyer:
                         //
                         break;
-                    case Roles.Worker:
-                        //to Workers form
+                    case Role.Worker:
+                        form = new TransportManagerForm(this);
+                        form.Show();
                         break;
-                    case Roles.Accountant:
-                        Orders form = new Orders(this);
+                    case Role.Accountant:
+                        form = new Orders(this);
                         form.Show();
                         break;
                     default:
                         SetError("unrecognized");
-                        break;
+                        return;
                 }
                 Hide();
             }

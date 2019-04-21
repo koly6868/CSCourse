@@ -10,7 +10,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace CourseWorkClientServer
+namespace CourseWorkClientServer.AccountantForms
 {
     public partial class Orders : Form
     {
@@ -85,7 +85,7 @@ namespace CourseWorkClientServer
             {
                 foreach(ListViewItem el in Contracts.SelectedItems)
                 {
-                    contractsRepository.Delite((int)el.Tag);
+                    contractsRepository.Delete((int)el.Tag);
                 }
             }
         }

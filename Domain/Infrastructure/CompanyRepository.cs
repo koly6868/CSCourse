@@ -94,7 +94,7 @@ namespace Domain.Infrastructure
             return res;
         }
 
-        public bool Delite(int ID)
+        public bool Delete(int ID)
         {
             throw new NotImplementedException();
         }

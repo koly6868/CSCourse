@@ -7,7 +7,7 @@ using Domain.Common;
 
 namespace Domain.Infrastructure.Request
 {
-    class CreateContractRequest : IRequest
+    public class CreateContractRequest : IRequest
     {
         public CreateContractRequest(Contract contract)
         {

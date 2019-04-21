@@ -126,6 +126,7 @@ namespace CourseWorkClientServer
             this.PasswordBox.Name = "PasswordBox";
             this.PasswordBox.Size = new System.Drawing.Size(130, 26);
             this.PasswordBox.TabIndex = 1;
+            this.PasswordBox.Text = "work";
             this.PasswordBox.TextChanged += new System.EventHandler(this.PasswordBox_TextChanged);
             this.PasswordBox.KeyUp += new System.Windows.Forms.KeyEventHandler(this.PressKeyHandler);
             // 
@@ -137,6 +138,7 @@ namespace CourseWorkClientServer
             this.LoginBox.Name = "LoginBox";
             this.LoginBox.Size = new System.Drawing.Size(130, 26);
             this.LoginBox.TabIndex = 0;
+            this.LoginBox.Text = "Work";
             this.LoginBox.TextChanged += new System.EventHandler(this.LoginBox_TextChanged);
             this.LoginBox.KeyUp += new System.Windows.Forms.KeyEventHandler(this.PressKeyHandler);
             // 

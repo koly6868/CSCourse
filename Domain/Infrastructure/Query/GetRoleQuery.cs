@@ -10,7 +10,7 @@ namespace Domain.Infrastructure.Query
     {
         public GetRoleQuery(string login)
         {
-            Sql = $"SELECT * FROM GetRole('{login}')";
+            Sql = $"use [Purchase department] SELECT * FROM GetRole('{login}')";
             
         }
 

@@ -1,4 +1,4 @@
-﻿namespace CourseWorkClientServer
+﻿namespace CourseWorkClientServer.AccountantForms
 {
     partial class NewContractForm
     {

@@ -7,6 +7,7 @@ using System.Threading.Tasks;
 using Domain.Common;
 using Domain.Infrastructure.Query;
 using Dapper;
+using Domain.Infrastructure.Request;
 
 namespace Domain.Infrastructure
 {
@@ -14,9 +15,20 @@ namespace Domain.Infrastructure
     {
         private TransportRepository() { }
 
-        public bool Delite(int ID)
+        public bool Delete(int ID)
         {
-            throw new NotImplementedException();
+            IRequest request = new DeleteTransportRequest();
+            try
+            {
+                using (var connection = new SqlConnection(connectionString))
+                {
+                    connection.Execute(request.Sql, new { ID });
+                    return true;
+                }
+            }catch (Exception e)
+            {
+                return false;
+            }
         }
 
         public Transport Get(int ID)
@@ -55,12 +67,38 @@ namespace Domain.Infrastructure
 
         public bool Add(Transport el)
         {
-            throw new NotImplementedException();
+            IRequest request = new AddTransportRequest(el);
+
+            try
+            {
+                using (var connection = new SqlConnection(connectionString))
+                {
+                    connection.Execute(request.Sql);
+                }
+                return true;
+            }
+            catch (Exception e)
+            {
+                return false;
+            }
         }
 
         public bool Update(Transport el)
         {
-            throw new NotImplementedException();
+            IRequest request = new UpdateTransportRequest();
+
+            try
+            {
+                using (var connection = new SqlConnection(connectionString))
+                {
+                    connection.Execute(request.Sql, el);
+                }
+                return true;
+            }
+            catch (Exception e)
+            {
+                return false;
+            }
         }
 
         public static TransportRepository GetInstance()

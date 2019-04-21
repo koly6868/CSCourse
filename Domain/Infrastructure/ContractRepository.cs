@@ -91,7 +91,7 @@ namespace Domain.Infrastructure
             throw new NotImplementedException();
         }
 
-        public bool Delite(int ID)
+        public bool Delete(int ID)
         {
             throw new NotImplementedException();
         }

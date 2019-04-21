@@ -10,11 +10,11 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using Domain.Infrastructure;
 
-namespace CourseWorkClientServer
+namespace CourseWorkClientServer.AccountantForms
 {
-    public partial class TransportForm : Form
+    public partial class TransportAddForm : Form
     {
-        public TransportForm(Action<ITransport> setTransport)
+        public TransportAddForm(Action<ITransport> setTransport)
         {
             InitializeComponent();
             this.setTransport = setTransport;

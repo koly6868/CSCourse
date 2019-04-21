@@ -86,34 +86,40 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Converter.cs" />
+    <Compile Include="ErrorFormcs.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ErrorFormcs.Designer.cs">
+      <DependentUpon>ErrorFormcs.cs</DependentUpon>
+    </Compile>
     <Compile Include="LogIn.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="LogIn.Designer.cs">
       <DependentUpon>LogIn.cs</DependentUpon>
     </Compile>
-    <Compile Include="NewContractForm.cs">
+    <Compile Include="AccountantForms\NewContractForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="NewContractForm.Designer.cs">
+    <Compile Include="AccountantForms\NewContractForm.Designer.cs">
       <DependentUpon>NewContractForm.cs</DependentUpon>
     </Compile>
-    <Compile Include="Orders.cs">
+    <Compile Include="AccountantForms\Orders.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Orders.Designer.cs">
+    <Compile Include="AccountantForms\Orders.Designer.cs">
       <DependentUpon>Orders.cs</DependentUpon>
     </Compile>
-    <Compile Include="ProductCountForm.cs">
+    <Compile Include="AccountantForms\ProductCountForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="ProductCountForm.Designer.cs">
+    <Compile Include="AccountantForms\ProductCountForm.Designer.cs">
       <DependentUpon>ProductCountForm.cs</DependentUpon>
     </Compile>
-    <Compile Include="ProductForm.cs">
+    <Compile Include="AccountantForms\ProductForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="ProductForm.Designer.cs">
+    <Compile Include="AccountantForms\ProductForm.Designer.cs">
       <DependentUpon>ProductForm.cs</DependentUpon>
     </Compile>
     <Compile Include="Program.cs" />
@@ -123,14 +129,44 @@
     <Compile Include="Form1.Designer.cs">
       <DependentUpon>Form1.cs</DependentUpon>
     </Compile>
-    <Compile Include="TransportForm.cs">
+    <Compile Include="AccountantForms\TransportAddForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="TransportForm.Designer.cs">
+    <Compile Include="AccountantForms\TransportAddForm.Designer.cs">
+      <DependentUpon>TransportAddForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="WorkerForms\ProductsReponseFrom.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="WorkerForms\ProductsReponseFrom.Designer.cs">
+      <DependentUpon>ProductsReponseFrom.cs</DependentUpon>
+    </Compile>
+    <Compile Include="WorkerForms\TransportForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="WorkerForms\TransportForm.Designer.cs">
       <DependentUpon>TransportForm.cs</DependentUpon>
     </Compile>
-    <EmbeddedResource Include="TransportForm.resx">
+    <Compile Include="WorkerForms\TransportManagerForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="WorkerForms\TransportManagerForm.Designer.cs">
+      <DependentUpon>TransportManagerForm.cs</DependentUpon>
+    </Compile>
+    <EmbeddedResource Include="AccountantForms\TransportAddForm.resx">
+      <DependentUpon>TransportAddForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ErrorFormcs.resx">
+      <DependentUpon>ErrorFormcs.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="WorkerForms\ProductsReponseFrom.resx">
+      <DependentUpon>ProductsReponseFrom.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="WorkerForms\TransportForm.resx">
       <DependentUpon>TransportForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="WorkerForms\TransportManagerForm.resx">
+      <DependentUpon>TransportManagerForm.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="Configuration.json" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -140,16 +176,16 @@
     <EmbeddedResource Include="LogIn.resx">
       <DependentUpon>LogIn.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="NewContractForm.resx">
+    <EmbeddedResource Include="AccountantForms\NewContractForm.resx">
       <DependentUpon>NewContractForm.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Orders.resx">
+    <EmbeddedResource Include="AccountantForms\Orders.resx">
       <DependentUpon>Orders.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="ProductCountForm.resx">
+    <EmbeddedResource Include="AccountantForms\ProductCountForm.resx">
       <DependentUpon>ProductCountForm.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="ProductForm.resx">
+    <EmbeddedResource Include="AccountantForms\ProductForm.resx">
       <DependentUpon>ProductForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">

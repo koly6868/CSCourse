@@ -10,8 +10,9 @@ using System.Windows.Forms;
 using Domain.Common;
 using static Domain.Common.Contract;
 using Domain.Infrastructure;
+using CourseWorkClientServer;
 
-namespace CourseWorkClientServer
+namespace CourseWorkClientServer.AccountantForms
 {
     public partial class NewContractForm : Form
     {
@@ -63,7 +64,7 @@ namespace CourseWorkClientServer
 
         private void AddTransportButton_Click(object sender, EventArgs e)
         {
-            TransportForm form = new TransportForm(AddTransportToContract);
+            TransportAddForm form = new TransportAddForm(AddTransportToContract);
             form.ShowDialog();
         }
 

@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Domain.Common
 {
-    public enum Roles
+    public enum Role
     {
         Buyer = 5,
         Worker = 7,
