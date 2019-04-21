@@ -5,6 +5,6 @@ namespace Domain.Infrastructure
 {
     public interface IProductRepository : IRepository<Product>
     {
-        IEnumerable<Product> GetByContractID(int ID);
+        IEnumerable<KeyValuePair<Product,int>> GetByContractID(int ID);
     }
 }

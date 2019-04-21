@@ -33,12 +33,20 @@ namespace Domain.Infrastructure
             }
         }
 
-        public IEnumerable<Product> GetByContractID(int ID)
+        public IEnumerable<KeyValuePair<Product,int>> GetByContractID(int ID)
         {
             IQuery query = new GetProductsByContract();
             using (var connection = new SqlConnection(connectionString))
             {
-                return connection.Query<Product>(query.Sql, new { ID });
+                return connection.Query<Product,int, KeyValuePair<Product,int>>(
+                    query.Sql,
+                    (product,count) =>
+                    {
+                        return new KeyValuePair<Product, int>(product, count);
+                    }, 
+                    new { ID },
+                    splitOn : "count"
+                );
             }
         }
 

@@ -30,6 +30,8 @@
         {
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
             this.NewContractPanel = new System.Windows.Forms.Panel();
+            this.CompanyLabel = new System.Windows.Forms.Label();
+            this.CompanyBox = new System.Windows.Forms.ComboBox();
             this.TransportValueLabel = new System.Windows.Forms.Label();
             this.TransportLabel = new System.Windows.Forms.Label();
             this.ContProductsValueLabel = new System.Windows.Forms.Label();
@@ -43,8 +45,6 @@
             this.IDContractLabel = new System.Windows.Forms.Label();
             this.IDContractBox = new System.Windows.Forms.TextBox();
             this.NewContractLabel = new System.Windows.Forms.Label();
-            this.CompanyBox = new System.Windows.Forms.ComboBox();
-            this.CompanyLabel = new System.Windows.Forms.Label();
             this.tableLayoutPanel1.SuspendLayout();
             this.NewContractPanel.SuspendLayout();
             this.SuspendLayout();
@@ -88,6 +88,28 @@
             this.NewContractPanel.Name = "NewContractPanel";
             this.NewContractPanel.Size = new System.Drawing.Size(330, 551);
             this.NewContractPanel.TabIndex = 1;
+            // 
+            // CompanyLabel
+            // 
+            this.CompanyLabel.AutoSize = true;
+            this.CompanyLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.CompanyLabel.Location = new System.Drawing.Point(15, 382);
+            this.CompanyLabel.Margin = new System.Windows.Forms.Padding(15);
+            this.CompanyLabel.Name = "CompanyLabel";
+            this.CompanyLabel.Size = new System.Drawing.Size(67, 17);
+            this.CompanyLabel.TabIndex = 15;
+            this.CompanyLabel.Text = "Compnay";
+            // 
+            // CompanyBox
+            // 
+            this.CompanyBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.CompanyBox.FormattingEnabled = true;
+            this.CompanyBox.Location = new System.Drawing.Point(90, 382);
+            this.CompanyBox.Margin = new System.Windows.Forms.Padding(15);
+            this.CompanyBox.Name = "CompanyBox";
+            this.CompanyBox.Size = new System.Drawing.Size(135, 24);
+            this.CompanyBox.TabIndex = 14;
+            this.CompanyBox.SelectedIndexChanged += new System.EventHandler(this.CompanyBox_SelectedIndexChanged);
             // 
             // TransportValueLabel
             // 
@@ -225,35 +247,13 @@
             // NewContractLabel
             // 
             this.NewContractLabel.AutoSize = true;
-            this.NewContractLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.NewContractLabel.Location = new System.Drawing.Point(132, 21);
+            this.NewContractLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.NewContractLabel.Location = new System.Drawing.Point(123, 18);
             this.NewContractLabel.Margin = new System.Windows.Forms.Padding(15);
             this.NewContractLabel.Name = "NewContractLabel";
-            this.NewContractLabel.Size = new System.Drawing.Size(61, 17);
+            this.NewContractLabel.Size = new System.Drawing.Size(70, 20);
             this.NewContractLabel.TabIndex = 0;
             this.NewContractLabel.Text = "Contract";
-            // 
-            // CompanyBox
-            // 
-            this.CompanyBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.CompanyBox.FormattingEnabled = true;
-            this.CompanyBox.Location = new System.Drawing.Point(90, 382);
-            this.CompanyBox.Margin = new System.Windows.Forms.Padding(15);
-            this.CompanyBox.Name = "CompanyBox";
-            this.CompanyBox.Size = new System.Drawing.Size(135, 24);
-            this.CompanyBox.TabIndex = 14;
-            this.CompanyBox.SelectedIndexChanged += new System.EventHandler(this.CompanyBox_SelectedIndexChanged);
-            // 
-            // CompanyLabel
-            // 
-            this.CompanyLabel.AutoSize = true;
-            this.CompanyLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.CompanyLabel.Location = new System.Drawing.Point(15, 382);
-            this.CompanyLabel.Margin = new System.Windows.Forms.Padding(15);
-            this.CompanyLabel.Name = "CompanyLabel";
-            this.CompanyLabel.Size = new System.Drawing.Size(67, 17);
-            this.CompanyLabel.TabIndex = 15;
-            this.CompanyLabel.Text = "Compnay";
             // 
             // NewContractForm
             // 

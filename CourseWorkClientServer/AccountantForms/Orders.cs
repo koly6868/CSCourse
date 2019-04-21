@@ -42,7 +42,7 @@ namespace CourseWorkClientServer.AccountantForms
             {
                 Products.Items.Clear();
                 int id = (int)Contracts.SelectedItems[0].Tag;
-                Product[] products = productRepository.GetByContractID(id).ToArray();
+                KeyValuePair<Product,int>[] products = productRepository.GetByContractID(id).ToArray();
                 Products.Items.AddRange(Converter.Convert(products));
             }
         }
