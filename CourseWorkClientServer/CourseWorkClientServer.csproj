@@ -144,6 +144,12 @@
     <Compile Include="WorkerForms\ProductsReponseF.Designer.cs">
       <DependentUpon>ProductsReponseF.cs</DependentUpon>
     </Compile>
+    <Compile Include="WorkerForms\ReturnProductWindow.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="WorkerForms\ReturnProductWindow.Designer.cs">
+      <DependentUpon>ReturnProductWindow.cs</DependentUpon>
+    </Compile>
     <Compile Include="WorkerForms\TransportForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -164,6 +170,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="WorkerForms\ProductsReponseF.resx">
       <DependentUpon>ProductsReponseF.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="WorkerForms\ReturnProductWindow.resx">
+      <DependentUpon>ReturnProductWindow.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="WorkerForms\TransportForm.resx">
       <DependentUpon>TransportForm.cs</DependentUpon>

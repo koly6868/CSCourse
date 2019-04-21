@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Domain.Extensions;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -33,11 +34,19 @@ namespace Domain.Common
             return TypeOfTransport;
         }
 
-        public string Description => 
-            string.Format("{0, 20} {1, 10} {2, 10} {3, 10}",
+        public string Description =>
+        StringExtensions.Align(
+            new string[]{
                 TypeOfTransport,
-                MaxWeight,
-                TimeOfDelivery,
-                Price);
+                MaxWeight.ToString(),
+                TimeOfDelivery.ToString(),
+                Price.ToString()
+            },
+            new int[] {
+                20,
+                14,
+                10,
+                10
+            });
     }
 }

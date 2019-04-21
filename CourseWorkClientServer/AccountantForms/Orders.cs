@@ -21,7 +21,7 @@ namespace CourseWorkClientServer.AccountantForms
             this.form = form;
             contractsRepository = ContractRepository.GetInstance();
             productRepository = ProductRepository.GetInstance();
-            LoadContracts();
+            UpdateContracts();
         }
 
         private void Orders_Load(object sender, EventArgs e)
@@ -29,8 +29,9 @@ namespace CourseWorkClientServer.AccountantForms
 
         }
 
-        private void LoadContracts()
+        private void UpdateContracts()
         {
+            Contracts.Items.Clear();
             Contract[] contracts = contractsRepository.GetAll().ToArray();
             Contracts.Items.AddRange(Converter.Convert(contracts));
         }
@@ -103,6 +104,7 @@ namespace CourseWorkClientServer.AccountantForms
         {
             NewContractForm form = new NewContractForm();
             form.ShowDialog();
+            UpdateContracts();
         }
     }
 }

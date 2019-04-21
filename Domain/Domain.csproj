@@ -56,6 +56,7 @@
     <Compile Include="Common\Result.cs" />
     <Compile Include="Common\Roles.cs" />
     <Compile Include="Common\Transport.cs" />
+    <Compile Include="Extensions\StringExtensions.cs" />
     <Compile Include="Infrastructure\ContractRepository.cs" />
     <Compile Include="Infrastructure\IProductRepository.cs" />
     <Compile Include="Infrastructure\IRepository.cs" />
@@ -77,6 +78,7 @@
     <Compile Include="Infrastructure\Request\AddTransportRequest.cs" />
     <Compile Include="Infrastructure\Request\CreateContractRequest.cs" />
     <Compile Include="Infrastructure\Request\IRequest.cs" />
+    <Compile Include="Infrastructure\Request\ResponseProductsUpdateRequest.cs" />
     <Compile Include="Infrastructure\Request\UpdateTransportRequest.cs" />
     <Compile Include="Infrastructure\ResponseProductRepository.cs" />
     <Compile Include="Infrastructure\Security\ISecurity.cs" />

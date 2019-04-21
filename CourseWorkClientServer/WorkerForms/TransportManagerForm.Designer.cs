@@ -31,6 +31,11 @@
             this.TopBar = new System.Windows.Forms.Panel();
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
             this.TransportPanel = new System.Windows.Forms.Panel();
+            this.HeaderPanel = new System.Windows.Forms.Panel();
+            this.PriceHeader = new System.Windows.Forms.Label();
+            this.TimeOfDeliveryHeader = new System.Windows.Forms.Label();
+            this.MaxWeightHeader = new System.Windows.Forms.Label();
+            this.NameHeader = new System.Windows.Forms.Label();
             this.TransportList = new System.Windows.Forms.ListBox();
             this.BottomTransportPanel = new System.Windows.Forms.Panel();
             this.RefreshButton = new System.Windows.Forms.Button();
@@ -43,11 +48,17 @@
             this.ResponseTableTab = new System.Windows.Forms.TabPage();
             this.tableLayoutPanel2 = new System.Windows.Forms.TableLayoutPanel();
             this.CentralPanel = new System.Windows.Forms.Panel();
+            this.panel1 = new System.Windows.Forms.Panel();
+            this.DescriptionLabel = new System.Windows.Forms.Label();
+            this.StateLabel = new System.Windows.Forms.Label();
+            this.IDContractLabel = new System.Windows.Forms.Label();
             this.ResponseList = new System.Windows.Forms.ListBox();
             this.TopCentralPanel = new System.Windows.Forms.Panel();
+            this.RetrunProductsButton = new System.Windows.Forms.Button();
             this.ResponseLabel = new System.Windows.Forms.Label();
             this.tableLayoutPanel1.SuspendLayout();
             this.TransportPanel.SuspendLayout();
+            this.HeaderPanel.SuspendLayout();
             this.BottomTransportPanel.SuspendLayout();
             this.TopTransportPanel.SuspendLayout();
             this.tabControl.SuspendLayout();
@@ -55,6 +66,7 @@
             this.ResponseTableTab.SuspendLayout();
             this.tableLayoutPanel2.SuspendLayout();
             this.CentralPanel.SuspendLayout();
+            this.panel1.SuspendLayout();
             this.TopCentralPanel.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -88,6 +100,7 @@
             // 
             // TransportPanel
             // 
+            this.TransportPanel.Controls.Add(this.HeaderPanel);
             this.TransportPanel.Controls.Add(this.TransportList);
             this.TransportPanel.Controls.Add(this.BottomTransportPanel);
             this.TransportPanel.Controls.Add(this.TopTransportPanel);
@@ -98,17 +111,78 @@
             this.TransportPanel.Size = new System.Drawing.Size(470, 449);
             this.TransportPanel.TabIndex = 0;
             // 
+            // HeaderPanel
+            // 
+            this.HeaderPanel.Controls.Add(this.PriceHeader);
+            this.HeaderPanel.Controls.Add(this.TimeOfDeliveryHeader);
+            this.HeaderPanel.Controls.Add(this.MaxWeightHeader);
+            this.HeaderPanel.Controls.Add(this.NameHeader);
+            this.HeaderPanel.Dock = System.Windows.Forms.DockStyle.Top;
+            this.HeaderPanel.Location = new System.Drawing.Point(0, 45);
+            this.HeaderPanel.Margin = new System.Windows.Forms.Padding(0);
+            this.HeaderPanel.Name = "HeaderPanel";
+            this.HeaderPanel.Size = new System.Drawing.Size(470, 31);
+            this.HeaderPanel.TabIndex = 5;
+            // 
+            // PriceHeader
+            // 
+            this.PriceHeader.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)));
+            this.PriceHeader.AutoSize = true;
+            this.PriceHeader.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.PriceHeader.Location = new System.Drawing.Point(415, 9);
+            this.PriceHeader.Margin = new System.Windows.Forms.Padding(5);
+            this.PriceHeader.Name = "PriceHeader";
+            this.PriceHeader.Size = new System.Drawing.Size(40, 17);
+            this.PriceHeader.TabIndex = 3;
+            this.PriceHeader.Text = "Price";
+            // 
+            // TimeOfDeliveryHeader
+            // 
+            this.TimeOfDeliveryHeader.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)));
+            this.TimeOfDeliveryHeader.AutoSize = true;
+            this.TimeOfDeliveryHeader.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.TimeOfDeliveryHeader.Location = new System.Drawing.Point(297, 9);
+            this.TimeOfDeliveryHeader.Margin = new System.Windows.Forms.Padding(5);
+            this.TimeOfDeliveryHeader.Name = "TimeOfDeliveryHeader";
+            this.TimeOfDeliveryHeader.Size = new System.Drawing.Size(108, 17);
+            this.TimeOfDeliveryHeader.TabIndex = 2;
+            this.TimeOfDeliveryHeader.Text = "Time of delivery";
+            // 
+            // MaxWeightHeader
+            // 
+            this.MaxWeightHeader.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)));
+            this.MaxWeightHeader.AutoSize = true;
+            this.MaxWeightHeader.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.MaxWeightHeader.Location = new System.Drawing.Point(210, 9);
+            this.MaxWeightHeader.Margin = new System.Windows.Forms.Padding(5);
+            this.MaxWeightHeader.Name = "MaxWeightHeader";
+            this.MaxWeightHeader.Size = new System.Drawing.Size(77, 17);
+            this.MaxWeightHeader.TabIndex = 1;
+            this.MaxWeightHeader.Text = "Max weight";
+            // 
+            // NameHeader
+            // 
+            this.NameHeader.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)));
+            this.NameHeader.AutoSize = true;
+            this.NameHeader.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.NameHeader.Location = new System.Drawing.Point(66, 9);
+            this.NameHeader.Margin = new System.Windows.Forms.Padding(5);
+            this.NameHeader.Name = "NameHeader";
+            this.NameHeader.Size = new System.Drawing.Size(45, 17);
+            this.NameHeader.TabIndex = 0;
+            this.NameHeader.Text = "Name";
+            // 
             // TransportList
             // 
             this.TransportList.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)));
             this.TransportList.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.TransportList.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.TransportList.Font = new System.Drawing.Font("Courier New", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.TransportList.FormattingEnabled = true;
             this.TransportList.ItemHeight = 16;
-            this.TransportList.Location = new System.Drawing.Point(0, 45);
+            this.TransportList.Location = new System.Drawing.Point(0, 76);
             this.TransportList.Margin = new System.Windows.Forms.Padding(0);
             this.TransportList.Name = "TransportList";
-            this.TransportList.Size = new System.Drawing.Size(470, 368);
+            this.TransportList.Size = new System.Drawing.Size(470, 336);
             this.TransportList.TabIndex = 4;
             this.TransportList.SelectedIndexChanged += new System.EventHandler(this.TransportList_SelectedIndexChanged);
             this.TransportList.DoubleClick += new System.EventHandler(this.OnDoubleClick);
@@ -236,6 +310,7 @@
             // 
             // CentralPanel
             // 
+            this.CentralPanel.Controls.Add(this.panel1);
             this.CentralPanel.Controls.Add(this.ResponseList);
             this.CentralPanel.Controls.Add(this.TopCentralPanel);
             this.CentralPanel.Dock = System.Windows.Forms.DockStyle.Fill;
@@ -245,19 +320,70 @@
             this.CentralPanel.Size = new System.Drawing.Size(470, 449);
             this.CentralPanel.TabIndex = 0;
             // 
+            // panel1
+            // 
+            this.panel1.Controls.Add(this.DescriptionLabel);
+            this.panel1.Controls.Add(this.StateLabel);
+            this.panel1.Controls.Add(this.IDContractLabel);
+            this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
+            this.panel1.Location = new System.Drawing.Point(0, 45);
+            this.panel1.Margin = new System.Windows.Forms.Padding(0);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(470, 31);
+            this.panel1.TabIndex = 6;
+            // 
+            // DescriptionLabel
+            // 
+            this.DescriptionLabel.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)));
+            this.DescriptionLabel.AutoSize = true;
+            this.DescriptionLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.DescriptionLabel.Location = new System.Drawing.Point(327, 9);
+            this.DescriptionLabel.Margin = new System.Windows.Forms.Padding(5);
+            this.DescriptionLabel.Name = "DescriptionLabel";
+            this.DescriptionLabel.Size = new System.Drawing.Size(79, 17);
+            this.DescriptionLabel.TabIndex = 3;
+            this.DescriptionLabel.Text = "Description";
+            // 
+            // StateLabel
+            // 
+            this.StateLabel.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)));
+            this.StateLabel.AutoSize = true;
+            this.StateLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.StateLabel.Location = new System.Drawing.Point(105, 9);
+            this.StateLabel.Margin = new System.Windows.Forms.Padding(5);
+            this.StateLabel.Name = "StateLabel";
+            this.StateLabel.Size = new System.Drawing.Size(41, 17);
+            this.StateLabel.TabIndex = 1;
+            this.StateLabel.Text = "State";
+            // 
+            // IDContractLabel
+            // 
+            this.IDContractLabel.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)));
+            this.IDContractLabel.AutoSize = true;
+            this.IDContractLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.IDContractLabel.Location = new System.Drawing.Point(19, 9);
+            this.IDContractLabel.Margin = new System.Windows.Forms.Padding(5);
+            this.IDContractLabel.Name = "IDContractLabel";
+            this.IDContractLabel.Size = new System.Drawing.Size(76, 17);
+            this.IDContractLabel.TabIndex = 0;
+            this.IDContractLabel.Text = "ID contract";
+            // 
             // ResponseList
             // 
             this.ResponseList.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.ResponseList.Font = new System.Drawing.Font("Courier New", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.ResponseList.FormattingEnabled = true;
-            this.ResponseList.Location = new System.Drawing.Point(0, 48);
+            this.ResponseList.ItemHeight = 16;
+            this.ResponseList.Location = new System.Drawing.Point(0, 81);
             this.ResponseList.Margin = new System.Windows.Forms.Padding(0);
             this.ResponseList.Name = "ResponseList";
-            this.ResponseList.Size = new System.Drawing.Size(470, 403);
+            this.ResponseList.Size = new System.Drawing.Size(470, 368);
             this.ResponseList.TabIndex = 1;
             // 
             // TopCentralPanel
             // 
             this.TopCentralPanel.BackColor = System.Drawing.SystemColors.ActiveCaption;
+            this.TopCentralPanel.Controls.Add(this.RetrunProductsButton);
             this.TopCentralPanel.Controls.Add(this.ResponseLabel);
             this.TopCentralPanel.Dock = System.Windows.Forms.DockStyle.Top;
             this.TopCentralPanel.Location = new System.Drawing.Point(0, 0);
@@ -265,11 +391,23 @@
             this.TopCentralPanel.Size = new System.Drawing.Size(470, 45);
             this.TopCentralPanel.TabIndex = 0;
             // 
+            // RetrunProductsButton
+            // 
+            this.RetrunProductsButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.RetrunProductsButton.Location = new System.Drawing.Point(342, 11);
+            this.RetrunProductsButton.Margin = new System.Windows.Forms.Padding(5);
+            this.RetrunProductsButton.Name = "RetrunProductsButton";
+            this.RetrunProductsButton.Size = new System.Drawing.Size(123, 25);
+            this.RetrunProductsButton.TabIndex = 3;
+            this.RetrunProductsButton.Text = "Return products";
+            this.RetrunProductsButton.UseVisualStyleBackColor = true;
+            this.RetrunProductsButton.Click += new System.EventHandler(this.RetrunProductsButton_Click);
+            // 
             // ResponseLabel
             // 
             this.ResponseLabel.AutoSize = true;
             this.ResponseLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.ResponseLabel.Location = new System.Drawing.Point(141, 12);
+            this.ResponseLabel.Location = new System.Drawing.Point(37, 12);
             this.ResponseLabel.Name = "ResponseLabel";
             this.ResponseLabel.Size = new System.Drawing.Size(179, 20);
             this.ResponseLabel.TabIndex = 0;
@@ -289,6 +427,8 @@
             this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.OnClosing);
             this.tableLayoutPanel1.ResumeLayout(false);
             this.TransportPanel.ResumeLayout(false);
+            this.HeaderPanel.ResumeLayout(false);
+            this.HeaderPanel.PerformLayout();
             this.BottomTransportPanel.ResumeLayout(false);
             this.TopTransportPanel.ResumeLayout(false);
             this.TopTransportPanel.PerformLayout();
@@ -297,6 +437,8 @@
             this.ResponseTableTab.ResumeLayout(false);
             this.tableLayoutPanel2.ResumeLayout(false);
             this.CentralPanel.ResumeLayout(false);
+            this.panel1.ResumeLayout(false);
+            this.panel1.PerformLayout();
             this.TopCentralPanel.ResumeLayout(false);
             this.TopCentralPanel.PerformLayout();
             this.ResumeLayout(false);
@@ -324,5 +466,15 @@
         private System.Windows.Forms.ListBox ResponseList;
         private System.Windows.Forms.Panel TopCentralPanel;
         private System.Windows.Forms.Label ResponseLabel;
+        private System.Windows.Forms.Panel HeaderPanel;
+        private System.Windows.Forms.Label MaxWeightHeader;
+        private System.Windows.Forms.Label NameHeader;
+        private System.Windows.Forms.Label PriceHeader;
+        private System.Windows.Forms.Label TimeOfDeliveryHeader;
+        private System.Windows.Forms.Panel panel1;
+        private System.Windows.Forms.Label DescriptionLabel;
+        private System.Windows.Forms.Label StateLabel;
+        private System.Windows.Forms.Label IDContractLabel;
+        private System.Windows.Forms.Button RetrunProductsButton;
     }
 }

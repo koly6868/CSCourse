@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Domain.Extensions;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -23,10 +24,21 @@ namespace Domain.Common
         }
 
         public string Description =>
-            string.Format("{0, 20} {1, 10} {2, 10}",
-                IDContract,
-                IsOk,
-                Reason == null? "-" : Reason);
+            StringExtensions.Align(
+                new string[]
+            {
+                IDContract.ToString(),
+                IsOk ? "Ok" : "return",
+                Reason == null? "-" : Reason
+            }, new int[]
+            {
+                10,
+                8,
+                40
+            });
+
+                
+            
 
         public void ReturnProduct(string reason)
         {

@@ -1,6 +1,7 @@
 ﻿using Dapper;
 using Domain.Common;
 using Domain.Infrastructure.Query;
+using Domain.Infrastructure.Request;
 using System;
 using System.Collections.Generic;
 using System.Data.SqlClient;
@@ -45,7 +46,20 @@ namespace Domain.Infrastructure
 
         public bool Update(ResponseProductcs el)
         {
-            throw new NotImplementedException();
+            IRequest request = new ResponseProductsUpdateRequest();
+
+            try
+            {
+                using (var connection = new SqlConnection(connectionString))
+                {
+                    connection.Query<ResponseProductcs>(request.Sql, new { el.IDContract, el.Reason });
+                }
+                return true;
+            }
+            catch (Exception e)
+            {
+                return false;
+            }
         }
 
         private ResponseProductRepository() { }

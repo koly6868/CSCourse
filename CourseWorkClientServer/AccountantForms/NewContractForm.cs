@@ -53,12 +53,25 @@ namespace CourseWorkClientServer.AccountantForms
             {
                 contractBuilder.SetID(int.Parse(IDContractBox.Text));
                 contractBuilder.SetDate(ContactDateBox.Value);
-                contractRepository.Add(contractBuilder.Build());
+                if (contractRepository.Add(contractBuilder.Build()))
+                {
+                    Close();
+                }
+                else
+                {
+                    SetError("Unable to create");
+                }
             }
             catch(Exception ex)
             {
-                ErrorLabel.Visible = true;
+                SetError("Incorrect data");
             }
+        }
+
+        private void SetError(string err)
+        {
+            ErrorLabel.Visible = true;
+            ErrorLabel.Text = err;
         }
 
 
@@ -75,6 +88,7 @@ namespace CourseWorkClientServer.AccountantForms
 
         private void LoadCompanies()
         {
+            CompanyBox.Items.Clear();
             CompanyBox.Items.AddRange(companyRepository.GetAll().ToArray());
         }
 

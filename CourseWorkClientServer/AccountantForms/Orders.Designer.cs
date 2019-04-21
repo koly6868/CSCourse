@@ -157,7 +157,7 @@
             this.Contracts.Location = new System.Drawing.Point(0, 44);
             this.Contracts.Margin = new System.Windows.Forms.Padding(0);
             this.Contracts.Name = "Contracts";
-            this.Contracts.Size = new System.Drawing.Size(300, 480);
+            this.Contracts.Size = new System.Drawing.Size(300, 499);
             this.Contracts.TabIndex = 0;
             this.Contracts.UseCompatibleStateImageBehavior = false;
             this.Contracts.View = System.Windows.Forms.View.Details;

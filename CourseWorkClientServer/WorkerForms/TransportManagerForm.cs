@@ -106,7 +106,7 @@ namespace CourseWorkClientServer.WorkerForms
             switch (tab)
             {
                 case Tab.Transport:
-                    OnTranportTabSwitced();
+                    OnTranportTabSwitched();
                     break;
 
                 case Tab.ResponseTable:
@@ -115,7 +115,7 @@ namespace CourseWorkClientServer.WorkerForms
             }
         }
 
-        private void OnTranportTabSwitced()
+        private void OnTranportTabSwitched()
         {
             UpdateTransports();
         }
