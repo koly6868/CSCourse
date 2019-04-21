@@ -85,6 +85,9 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="WorkerForms\ProductsReponseForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="Converter.cs" />
     <Compile Include="ErrorFormcs.cs">
       <SubType>Form</SubType>
@@ -135,11 +138,11 @@
     <Compile Include="AccountantForms\TransportAddForm.Designer.cs">
       <DependentUpon>TransportAddForm.cs</DependentUpon>
     </Compile>
-    <Compile Include="WorkerForms\ProductsReponseFrom.cs">
+    <Compile Include="WorkerForms\ProductsReponseF.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="WorkerForms\ProductsReponseFrom.Designer.cs">
-      <DependentUpon>ProductsReponseFrom.cs</DependentUpon>
+    <Compile Include="WorkerForms\ProductsReponseF.Designer.cs">
+      <DependentUpon>ProductsReponseF.cs</DependentUpon>
     </Compile>
     <Compile Include="WorkerForms\TransportForm.cs">
       <SubType>Form</SubType>
@@ -159,8 +162,8 @@
     <EmbeddedResource Include="ErrorFormcs.resx">
       <DependentUpon>ErrorFormcs.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="WorkerForms\ProductsReponseFrom.resx">
-      <DependentUpon>ProductsReponseFrom.cs</DependentUpon>
+    <EmbeddedResource Include="WorkerForms\ProductsReponseF.resx">
+      <DependentUpon>ProductsReponseF.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="WorkerForms\TransportForm.resx">
       <DependentUpon>TransportForm.cs</DependentUpon>

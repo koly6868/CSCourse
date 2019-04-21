@@ -39,6 +39,5 @@ namespace Domain.Common
                 MaxWeight,
                 TimeOfDelivery,
                 Price);
-
     }
 }

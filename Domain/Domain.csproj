@@ -52,6 +52,7 @@
     <Compile Include="Common\IResult.cs" />
     <Compile Include="Common\ITransport.cs" />
     <Compile Include="Common\Product.cs" />
+    <Compile Include="Common\ResponseProductcs.cs" />
     <Compile Include="Common\Result.cs" />
     <Compile Include="Common\Roles.cs" />
     <Compile Include="Common\Transport.cs" />
@@ -61,6 +62,7 @@
     <Compile Include="Infrastructure\ProductRepository.cs" />
     <Compile Include="Infrastructure\Query\GetAllCompanyQuery.cs" />
     <Compile Include="Infrastructure\Query\GetAllContractsQuery.cs" />
+    <Compile Include="Infrastructure\Query\GetAllResponseProductsQuery.cs" />
     <Compile Include="Infrastructure\Query\GetAllTrnasportQuery.cs" />
     <Compile Include="Infrastructure\Query\GetTransportByIDQuery.cs" />
     <Compile Include="Infrastructure\Query\GetProductsQuery.cs" />
@@ -76,6 +78,7 @@
     <Compile Include="Infrastructure\Request\CreateContractRequest.cs" />
     <Compile Include="Infrastructure\Request\IRequest.cs" />
     <Compile Include="Infrastructure\Request\UpdateTransportRequest.cs" />
+    <Compile Include="Infrastructure\ResponseProductRepository.cs" />
     <Compile Include="Infrastructure\Security\ISecurity.cs" />
     <Compile Include="Infrastructure\Security\Security.cs" />
     <Compile Include="Infrastructure\TransportRepository.cs" />

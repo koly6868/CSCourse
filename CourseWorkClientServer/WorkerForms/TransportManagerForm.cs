@@ -17,6 +17,7 @@ namespace CourseWorkClientServer.WorkerForms
         public TransportManagerForm(Form form)
         {
             InitializeComponent();
+            ProductsReponseTabConfigure();
             mainFrom = form;
             transportRepository = TransportRepository.GetInstance();
             UpdateTransports();
@@ -37,7 +38,7 @@ namespace CourseWorkClientServer.WorkerForms
 
         private void TransportList_SelectedIndexChanged(object sender, EventArgs e)
         {
-
+            
         }
 
         private bool AddTransport(Transport transport)
@@ -97,5 +98,26 @@ namespace CourseWorkClientServer.WorkerForms
 
         private IRepository<Transport> transportRepository;
         private Form mainFrom;
+
+        private void tabControl1_Selected(object sender, TabControlEventArgs e)
+        {
+            Tab tab = (Tab)tabControl.SelectedTab.Tag;
+
+            switch (tab)
+            {
+                case Tab.Transport:
+                    OnTranportTabSwitced();
+                    break;
+
+                case Tab.ResponseTable:
+                    OnResponseTableTabSwitced();
+                    break;
+            }
+        }
+
+        private void OnTranportTabSwitced()
+        {
+            UpdateTransports();
+        }
     }
 }

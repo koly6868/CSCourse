@@ -108,6 +108,7 @@ namespace CourseWorkClientServer
             ContractRepository.Configure(connectionString);
             TransportRepository.Configure(connectionString);
             CompanyRepository.Configure(connectionString);
+            ResponseProductRepository.Configure(connectionString);
         }
 
         private readonly IConfiguration configuration;

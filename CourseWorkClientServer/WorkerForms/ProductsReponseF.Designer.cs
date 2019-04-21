@@ -1,6 +1,6 @@
 ﻿namespace CourseWorkClientServer.WorkerForms
 {
-    partial class ProductsReponseFrom
+    partial class ProductsReponseF
     {
         /// <summary>
         /// Required designer variable.
@@ -31,7 +31,7 @@
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
             this.CentralPanel = new System.Windows.Forms.Panel();
             this.TopCentralPanel = new System.Windows.Forms.Panel();
-            this.listBox1 = new System.Windows.Forms.ListBox();
+            this.ResponseList = new System.Windows.Forms.ListBox();
             this.ResponseLabel = new System.Windows.Forms.Label();
             this.tableLayoutPanel1.SuspendLayout();
             this.CentralPanel.SuspendLayout();
@@ -55,7 +55,7 @@
             // 
             // CentralPanel
             // 
-            this.CentralPanel.Controls.Add(this.listBox1);
+            this.CentralPanel.Controls.Add(this.ResponseList);
             this.CentralPanel.Controls.Add(this.TopCentralPanel);
             this.CentralPanel.Dock = System.Windows.Forms.DockStyle.Fill;
             this.CentralPanel.Location = new System.Drawing.Point(237, 15);
@@ -74,15 +74,16 @@
             this.TopCentralPanel.Size = new System.Drawing.Size(470, 45);
             this.TopCentralPanel.TabIndex = 0;
             // 
-            // listBox1
+            // ResponseList
             // 
-            this.listBox1.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.listBox1.FormattingEnabled = true;
-            this.listBox1.Location = new System.Drawing.Point(0, 48);
-            this.listBox1.Margin = new System.Windows.Forms.Padding(0);
-            this.listBox1.Name = "listBox1";
-            this.listBox1.Size = new System.Drawing.Size(470, 468);
-            this.listBox1.TabIndex = 1;
+            this.ResponseList.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.ResponseList.FormattingEnabled = true;
+            this.ResponseList.Location = new System.Drawing.Point(0, 48);
+            this.ResponseList.Margin = new System.Windows.Forms.Padding(0);
+            this.ResponseList.Name = "ResponseList";
+            this.ResponseList.Size = new System.Drawing.Size(470, 468);
+            this.ResponseList.TabIndex = 1;
+            this.ResponseList.SelectedIndexChanged += new System.EventHandler(this.listBox1_SelectedIndexChanged);
             // 
             // ResponseLabel
             // 
@@ -115,9 +116,10 @@
 
         #endregion
 
+
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel1;
         private System.Windows.Forms.Panel CentralPanel;
-        private System.Windows.Forms.ListBox listBox1;
+        private System.Windows.Forms.ListBox ResponseList;
         private System.Windows.Forms.Panel TopCentralPanel;
         private System.Windows.Forms.Label ResponseLabel;
     }
