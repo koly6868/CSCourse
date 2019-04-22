@@ -15,17 +15,17 @@ namespace Domain.Infrastructure
     {
         public bool Add(ResponseProductcs el)
         {
-            throw new NotImplementedException();
+            return false;
         }
 
         public bool Delete(int ID)
         {
-            throw new NotImplementedException();
+            return false;
         }
 
         public ResponseProductcs Get(int ID)
         {
-            throw new NotImplementedException();
+            return null;
         }
 
         public IEnumerable<ResponseProductcs> GetAll()

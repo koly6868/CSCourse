@@ -88,12 +88,12 @@ namespace Domain.Infrastructure
 
         public bool Update(Contract el)
         {
-            throw new NotImplementedException();
+            return false;
         }
 
         public bool Delete(int ID)
         {
-            throw new NotImplementedException();
+            return false;
         }
 
         private static ContractRepository repository = new ContractRepository();
