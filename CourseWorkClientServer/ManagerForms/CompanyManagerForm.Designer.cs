@@ -77,7 +77,6 @@
             this.CompanyList.TabIndex = 2;
             this.CompanyList.UseCompatibleStateImageBehavior = false;
             this.CompanyList.View = System.Windows.Forms.View.Details;
-            this.CompanyList.SelectedIndexChanged += new System.EventHandler(this.CompanyList_SelectedIndexChanged);
             this.CompanyList.DoubleClick += new System.EventHandler(this.OnDoubleClick);
             // 
             // columnHeaderName
@@ -169,6 +168,7 @@
             this.CompanyListPanel.ResumeLayout(false);
             this.CompanyListTopPanel.ResumeLayout(false);
             this.ResumeLayout(false);
+            this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.OnClosing);
 
         }
 

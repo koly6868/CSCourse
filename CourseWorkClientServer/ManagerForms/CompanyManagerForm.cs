@@ -36,10 +36,9 @@ namespace CourseWorkClientServer.ManagerForms
                     companyRepository.GetAll()));                 
         }
 
-
-
-        private void CompanyList_SelectedIndexChanged(object sender, EventArgs e)
-        {          
+        private void OnClosing(object sender, FormClosedEventArgs e)
+        {
+            mainForm.Close();
         }
 
         private bool AddCompany(Company company)
