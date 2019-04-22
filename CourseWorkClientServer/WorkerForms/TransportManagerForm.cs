@@ -91,7 +91,7 @@ namespace CourseWorkClientServer.WorkerForms
             }
             else
             {
-                ErrorFormcs error = new ErrorFormcs("Unable to delite");
+                ErrorForm error = new ErrorForm("Unable to delite");
                 error.ShowDialog();
             }
         }

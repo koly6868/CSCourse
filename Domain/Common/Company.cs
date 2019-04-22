@@ -19,6 +19,14 @@ namespace Domain.Common
             adresses.Add(adress);
         }
 
+        public void AddAdress(IEnumerable<AdressOfDepartment> adresses)
+        {
+            foreach(AdressOfDepartment adress in adresses)
+            {
+                this.adresses.Add(adress);
+            }
+        }
+
         public bool Equals(Company other)
         {
             return other.ID == ID;
@@ -29,8 +37,15 @@ namespace Domain.Common
             return Name;
         }
 
-        private List<AdressOfDepartment> adresses = new List<AdressOfDepartment>();
+        private List<AdressOfDepartment> adresses;
 
-        
+        public Company(int id, string name, int rating, string formOfCompany)
+        {
+            ID = id;
+            Name = name ?? throw new ArgumentNullException(nameof(name));
+            Rating = rating;
+            FormOfCompany = formOfCompany ?? throw new ArgumentNullException(nameof(formOfCompany));
+            adresses = new List<AdressOfDepartment>();
+        }
     }
 }

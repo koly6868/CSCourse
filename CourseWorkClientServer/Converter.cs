@@ -101,6 +101,18 @@ namespace CourseWorkClientServer
             return products.ToArray();
         }
 
+        public static ListViewItem[] Convert(IEnumerable<Company> companies)
+        {
+            return companies.Select(el =>
+            {
+                var item = new ListViewItem(new string[] { el.Name, el.Rating.ToString() });
+                item.Tag = el.ID;
+
+                return item;
+            })
+            .ToArray();
+        }
+
         public static ListViewItem[] Convert(ITransport[] transport)
         {
             ListViewItem[] items = new ListViewItem[transport.Length];

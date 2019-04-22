@@ -10,9 +10,9 @@ using System.Windows.Forms;
 
 namespace CourseWorkClientServer
 {
-    public partial class ErrorFormcs : Form
+    public partial class ErrorForm : Form
     {
-        public ErrorFormcs(string err)
+        public ErrorForm(string err)
         {
             InitializeComponent();
             richTextBox1.Text = err;

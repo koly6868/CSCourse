@@ -1,6 +1,6 @@
 ﻿namespace CourseWorkClientServer
 {
-    partial class ErrorFormcs
+    partial class ErrorForm
     {
         /// <summary>
         /// Required designer variable.

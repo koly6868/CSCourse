@@ -74,11 +74,14 @@
     <Compile Include="Infrastructure\Query\GetRoleQuery.cs" />
     <Compile Include="Infrastructure\Query\IQuery.cs" />
     <Compile Include="Infrastructure\CompanyRepository.cs" />
+    <Compile Include="Infrastructure\Request\AddCompanyRequestcs.cs" />
+    <Compile Include="Infrastructure\Request\DeleteCompanyRequest.cs" />
     <Compile Include="Infrastructure\Request\DeleteTransportRequest.cs" />
     <Compile Include="Infrastructure\Request\AddTransportRequest.cs" />
     <Compile Include="Infrastructure\Request\CreateContractRequest.cs" />
     <Compile Include="Infrastructure\Request\IRequest.cs" />
     <Compile Include="Infrastructure\Request\ResponseProductsUpdateRequest.cs" />
+    <Compile Include="Infrastructure\Request\UpdateCompanyRequest.cs" />
     <Compile Include="Infrastructure\Request\UpdateTransportRequest.cs" />
     <Compile Include="Infrastructure\ResponseProductRepository.cs" />
     <Compile Include="Infrastructure\Security\ISecurity.cs" />

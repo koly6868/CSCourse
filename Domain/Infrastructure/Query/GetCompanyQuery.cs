@@ -10,9 +10,12 @@ namespace Domain.Infrastructure.Query
     {
         public GetCompanyQuery()
         {
-            Sql = "SELECT * FROM Company " +
-                "JOIN AdressOfDepartment ON AdressOfDepartment.ID_company = Company.ID " +
-                "WHERE Company.ID = @ID";
+            Sql = "SELECT Company.ID, Company.name, Company.rating, " +
+                    "Company.FormOfCompany, AdressOfDepartment.ID, AdressOfDepartment.city, " +
+                    "AdressOfDepartment.street, AdressOfDepartment.building, AdressOfDepartment.phone " +
+                    "FROM Company " +
+                    "JOIN AdressOfDepartment ON AdressOfDepartment.ID_company = Company.ID " +
+                    "WHERE Company.ID = @ID";
         }
 
         public string Sql { get; }

@@ -7,6 +7,7 @@ using System.Threading.Tasks;
 using Dapper;
 using Domain.Common;
 using Domain.Infrastructure.Query;
+using Domain.Infrastructure.Request;
 
 namespace Domain.Infrastructure
 {
@@ -39,7 +40,7 @@ namespace Domain.Infrastructure
                 }
             } catch(Exception e)
             {
-                // To do
+                return null;
             }
 
             return res;
@@ -47,12 +48,48 @@ namespace Domain.Infrastructure
 
         public bool Update(Company el)
         {
-            throw new NotImplementedException();
+            IRequest request = new UpdateCompanyRequest(el);
+
+            try
+            {
+                using (var connection = new SqlConnection(connectionString))
+                {
+                    connection.Open();
+                    using (var transaction = connection.BeginTransaction())
+                    {
+                        connection.Execute(request.Sql, transaction : transaction);
+                        transaction.Commit();
+                    }
+                }
+                return true;
+            }
+            catch (Exception e)
+            {
+                return false;
+            }
         }
 
         public bool Add(Company el)
         {
-            throw new NotImplementedException();
+            IRequest request = new AddCompanyRequestcs(el);
+
+            try
+            {
+                using (var connection = new SqlConnection(connectionString))
+                {
+                    connection.Open();
+                    using (var transaction = connection.BeginTransaction())
+                    {
+                        connection.Execute(request.Sql, transaction: transaction);
+                        transaction.Commit();
+                    }
+                }
+                return true;
+            }
+            catch (Exception e)
+            {
+                return false;
+            }
         }
 
         public IEnumerable<Company> GetAll()
@@ -88,7 +125,7 @@ namespace Domain.Infrastructure
             }
             catch (Exception e)
             {
-                // To do
+                return null;
             }
 
             return res;
@@ -96,7 +133,19 @@ namespace Domain.Infrastructure
 
         public bool Delete(int ID)
         {
-            throw new NotImplementedException();
+            IRequest request = new DeleteCompanyRequest();
+
+            try
+            {
+                using(var connection = new SqlConnection(connectionString))
+                {
+                    connection.Execute(request.Sql, new { ID });
+                }
+                return true;
+            }catch(Exception e)
+            {
+                return false;
+            }
         }
 
         public static void Configure(string connectionString)

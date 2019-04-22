@@ -85,15 +85,27 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="ManagerForms\AdressForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ManagerForms\AdressForm.Designer.cs">
+      <DependentUpon>AdressForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ManagerForms\CompanyFrom.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ManagerForms\CompanyFrom.Designer.cs">
+      <DependentUpon>CompanyFrom.cs</DependentUpon>
+    </Compile>
     <Compile Include="WorkerForms\ProductsReponseForm.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Converter.cs" />
-    <Compile Include="ErrorFormcs.cs">
+    <Compile Include="ErrorForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="ErrorFormcs.Designer.cs">
-      <DependentUpon>ErrorFormcs.cs</DependentUpon>
+    <Compile Include="ErrorForm.Designer.cs">
+      <DependentUpon>ErrorForm.cs</DependentUpon>
     </Compile>
     <Compile Include="LogIn.cs">
       <SubType>Form</SubType>
@@ -126,11 +138,11 @@
       <DependentUpon>ProductForm.cs</DependentUpon>
     </Compile>
     <Compile Include="Program.cs" />
-    <Compile Include="Form1.cs">
+    <Compile Include="ManagerForms\CompanyManagerForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Form1.Designer.cs">
-      <DependentUpon>Form1.cs</DependentUpon>
+    <Compile Include="ManagerForms\CompanyManagerForm.Designer.cs">
+      <DependentUpon>CompanyManagerForm.cs</DependentUpon>
     </Compile>
     <Compile Include="AccountantForms\TransportAddForm.cs">
       <SubType>Form</SubType>
@@ -165,8 +177,14 @@
     <EmbeddedResource Include="AccountantForms\TransportAddForm.resx">
       <DependentUpon>TransportAddForm.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="ErrorFormcs.resx">
-      <DependentUpon>ErrorFormcs.cs</DependentUpon>
+    <EmbeddedResource Include="ErrorForm.resx">
+      <DependentUpon>ErrorForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ManagerForms\AdressForm.resx">
+      <DependentUpon>AdressForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ManagerForms\CompanyFrom.resx">
+      <DependentUpon>CompanyFrom.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="WorkerForms\ProductsReponseF.resx">
       <DependentUpon>ProductsReponseF.cs</DependentUpon>
@@ -182,8 +200,8 @@
     </EmbeddedResource>
     <None Include="Configuration.json" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <EmbeddedResource Include="Form1.resx">
-      <DependentUpon>Form1.cs</DependentUpon>
+    <EmbeddedResource Include="ManagerForms\CompanyManagerForm.resx">
+      <DependentUpon>CompanyManagerForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="LogIn.resx">
       <DependentUpon>LogIn.cs</DependentUpon>
@@ -232,5 +250,6 @@
       <Name>Domain</Name>
     </ProjectReference>
   </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

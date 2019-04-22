@@ -8,7 +8,7 @@ namespace Domain.Common
 {
     public enum Role
     {
-        Buyer = 5,
+        Manager = 16,
         Worker = 7,
         Admin = 13,
         Accountant = 9

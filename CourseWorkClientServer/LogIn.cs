@@ -13,6 +13,7 @@ using Domain.Common;
 using Microsoft.Extensions.Configuration;
 using CourseWorkClientServer.AccountantForms;
 using CourseWorkClientServer.WorkerForms;
+using CourseWorkClientServer.ManagerForms;
 
 namespace CourseWorkClientServer
 {
@@ -36,8 +37,9 @@ namespace CourseWorkClientServer
                 Form form;
                 switch ((Role)result.value)
                 {
-                    case Role.Buyer:
-                        //
+                    case Role.Manager:
+                        form = new CompanyManagerForm(this);
+                        form.Show();
                         break;
                     case Role.Worker:
                         form = new TransportManagerForm(this);
