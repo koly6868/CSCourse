@@ -1,13 +1,6 @@
-﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using Domain.Common;
+using System;
 using System.Windows.Forms;
-using Domain.Common;
 
 namespace CourseWorkClientServer.WorkerForms
 {
@@ -43,18 +36,18 @@ namespace CourseWorkClientServer.WorkerForms
                     NameTransportBox.Text,
                     int.Parse(MaxWeightBox.Text)
                     );
-            }catch(Exception ex)
+                if (FuncFoAct(transport))
+                {
+                    Close();
+                }
+                else
+                {
+                    SetError("Somthing went wrong");
+                }
+            }
+            catch(Exception ex)
             {
                 SetError("Incorrect data");
-            }
-
-            if (FuncFoAct(transport))
-            {
-                Close();
-            }
-            else
-            {
-                SetError("Somthing went wrong");
             }
         }
 

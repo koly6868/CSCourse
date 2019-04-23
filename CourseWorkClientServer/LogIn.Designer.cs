@@ -89,7 +89,7 @@ namespace CourseWorkClientServer
             // SignInButton
             // 
             this.SignInButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.SignInButton.Location = new System.Drawing.Point(94, 187);
+            this.SignInButton.Location = new System.Drawing.Point(104, 187);
             this.SignInButton.Margin = new System.Windows.Forms.Padding(10);
             this.SignInButton.Name = "SignInButton";
             this.SignInButton.Size = new System.Drawing.Size(75, 27);
@@ -124,9 +124,9 @@ namespace CourseWorkClientServer
             this.PasswordBox.Location = new System.Drawing.Point(71, 110);
             this.PasswordBox.Margin = new System.Windows.Forms.Padding(10);
             this.PasswordBox.Name = "PasswordBox";
+            this.PasswordBox.PasswordChar = '*';
             this.PasswordBox.Size = new System.Drawing.Size(130, 26);
             this.PasswordBox.TabIndex = 1;
-            this.PasswordBox.Text = "man";
             this.PasswordBox.TextChanged += new System.EventHandler(this.PasswordBox_TextChanged);
             this.PasswordBox.KeyUp += new System.Windows.Forms.KeyEventHandler(this.PressKeyHandler);
             // 
@@ -138,7 +138,6 @@ namespace CourseWorkClientServer
             this.LoginBox.Name = "LoginBox";
             this.LoginBox.Size = new System.Drawing.Size(130, 26);
             this.LoginBox.TabIndex = 0;
-            this.LoginBox.Text = "Man";
             this.LoginBox.TextChanged += new System.EventHandler(this.LoginBox_TextChanged);
             this.LoginBox.KeyUp += new System.Windows.Forms.KeyEventHandler(this.PressKeyHandler);
             // 

@@ -40,6 +40,7 @@
             this.TransportTimeOfDelivery = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.TopTransportPanel = new System.Windows.Forms.Panel();
             this.TransportLabel = new System.Windows.Forms.Label();
+            this.ErrorLabel = new System.Windows.Forms.Label();
             this.tableLayoutPanel1.SuspendLayout();
             this.TransportPanel.SuspendLayout();
             this.BottomTransportPanel.SuspendLayout();
@@ -88,6 +89,7 @@
             // BottomTransportPanel
             // 
             this.BottomTransportPanel.BackColor = System.Drawing.SystemColors.ActiveCaption;
+            this.BottomTransportPanel.Controls.Add(this.ErrorLabel);
             this.BottomTransportPanel.Controls.Add(this.OkButton);
             this.BottomTransportPanel.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.BottomTransportPanel.Location = new System.Drawing.Point(0, 439);
@@ -164,7 +166,20 @@
             this.TransportLabel.TabIndex = 0;
             this.TransportLabel.Text = "Transport";
             // 
-            // TransportForm
+            // ErrorLabel
+            // 
+            this.ErrorLabel.AutoSize = true;
+            this.ErrorLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.ErrorLabel.ForeColor = System.Drawing.Color.LightPink;
+            this.ErrorLabel.Location = new System.Drawing.Point(106, 19);
+            this.ErrorLabel.Margin = new System.Windows.Forms.Padding(15);
+            this.ErrorLabel.Name = "ErrorLabel";
+            this.ErrorLabel.Size = new System.Drawing.Size(95, 17);
+            this.ErrorLabel.TabIndex = 10;
+            this.ErrorLabel.Text = "Incorrect data";
+            this.ErrorLabel.Visible = false;
+            // 
+            // TransportAddForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -172,12 +187,13 @@
             this.ClientSize = new System.Drawing.Size(944, 551);
             this.Controls.Add(this.tableLayoutPanel1);
             this.Controls.Add(this.TopBar);
-            this.Name = "TransportForm";
+            this.Name = "TransportAddForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "TransportForm";
             this.tableLayoutPanel1.ResumeLayout(false);
             this.TransportPanel.ResumeLayout(false);
             this.BottomTransportPanel.ResumeLayout(false);
+            this.BottomTransportPanel.PerformLayout();
             this.TopTransportPanel.ResumeLayout(false);
             this.TopTransportPanel.PerformLayout();
             this.ResumeLayout(false);
@@ -198,5 +214,6 @@
         private System.Windows.Forms.ColumnHeader TransportTimeOfDelivery;
         private System.Windows.Forms.Button OkButton;
         private System.Windows.Forms.Panel BottomTransportPanel;
+        private System.Windows.Forms.Label ErrorLabel;
     }
 }

@@ -1,30 +1,15 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using Dapper;
 using Domain.Common;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using Domain.Infrastructure.Query;
-using System.Data.SqlClient;
-using Dapper;
 using Domain.Infrastructure.Request;
+using System;
+using System.Collections.Generic;
+using System.Data.SqlClient;
 
 namespace Domain.Infrastructure
 {
     public class ContractRepository : IRepository<Contract>
     {
-        private ContractRepository() { }
-
-        public static void Configure(string connectionString)
-        {
-            repository.connectionString = connectionString;
-        }
-
-        public static ContractRepository GetInstance()
-        {
-            return repository;
-        }
-
         public Contract Get(int ID)
         {
             throw new NotImplementedException();
@@ -93,7 +78,31 @@ namespace Domain.Infrastructure
 
         public bool Delete(int ID)
         {
-            return false;
+            IRequest request = new DeleteContractRequestcs();
+
+            try
+            {
+                using (var connection = new SqlConnection(connectionString))
+                {
+                    connection.Execute(request.Sql, new { ID });
+                }
+                return true;
+            }catch(Exception e)
+            {
+                return false;
+            }
+        }
+
+        private ContractRepository() { }
+
+        public static void Configure(string connectionString)
+        {
+            repository.connectionString = connectionString;
+        }
+
+        public static ContractRepository GetInstance()
+        {
+            return repository;
         }
 
         private static ContractRepository repository = new ContractRepository();

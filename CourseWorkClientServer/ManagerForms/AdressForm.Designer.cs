@@ -148,7 +148,7 @@
             this.OkButton.Name = "OkButton";
             this.OkButton.Size = new System.Drawing.Size(90, 25);
             this.OkButton.TabIndex = 12;
-            this.OkButton.Text = "Ok";
+            this.OkButton.Text = "Save";
             this.OkButton.UseVisualStyleBackColor = true;
             this.OkButton.Click += new System.EventHandler(this.OkButton_Click);
             // 

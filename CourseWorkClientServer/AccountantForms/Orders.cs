@@ -1,13 +1,8 @@
-﻿using Domain.Infrastructure;
-using Domain.Common;
+﻿using Domain.Common;
+using Domain.Infrastructure;
 using System;
 using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace CourseWorkClientServer.AccountantForms
@@ -89,6 +84,7 @@ namespace CourseWorkClientServer.AccountantForms
                     contractsRepository.Delete((int)el.Tag);
                 }
             }
+            UpdateContracts();
         }
 
         private readonly IRepository<Contract> contractsRepository;

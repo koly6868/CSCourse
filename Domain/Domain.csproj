@@ -47,7 +47,6 @@
     <Compile Include="Common\Company.cs" />
     <Compile Include="Common\Contract.cs" />
     <Compile Include="Common\ForeignTransport.cs" />
-    <Compile Include="Common\IEntity.cs" />
     <Compile Include="Common\IProduct.cs" />
     <Compile Include="Common\IResult.cs" />
     <Compile Include="Common\ITransport.cs" />
@@ -76,6 +75,7 @@
     <Compile Include="Infrastructure\CompanyRepository.cs" />
     <Compile Include="Infrastructure\Request\AddCompanyRequestcs.cs" />
     <Compile Include="Infrastructure\Request\DeleteCompanyRequest.cs" />
+    <Compile Include="Infrastructure\Request\DeleteContractRequestcs.cs" />
     <Compile Include="Infrastructure\Request\DeleteTransportRequest.cs" />
     <Compile Include="Infrastructure\Request\AddTransportRequest.cs" />
     <Compile Include="Infrastructure\Request\CreateContractRequest.cs" />

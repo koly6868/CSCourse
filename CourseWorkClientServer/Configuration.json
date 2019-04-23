@@ -1,6 +1,5 @@
 ﻿{
   "Name": "Course",
-  "ConnectionString": "Server=DESKTOP-SHINE\\SQLEXPRESS;Database=Purchase department;User Id=admin;Password=admin;",
   "ConnectionStringForm": "Server=DESKTOP-SHINE\\SQLEXPRESS;Database=Purchase department;User Id={login};Password={password};",
   "Colors": {
     "ErrorColor": "221, 16, 55",

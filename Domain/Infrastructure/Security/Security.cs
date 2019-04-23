@@ -1,12 +1,9 @@
-﻿using Domain.Common;
+﻿using Dapper;
+using Domain.Common;
+using Domain.Infrastructure.Query;
 using System;
-using System.Collections.Generic;
 using System.Data.SqlClient;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using Dapper;
-using Domain.Infrastructure.Query;
 
 namespace Domain.Infrastructure.Security
 {
